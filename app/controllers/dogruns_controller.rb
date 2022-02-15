@@ -6,6 +6,10 @@ class DogrunsController < ApplicationController
     @dogruns = Dogrun.all
   end
 
+  def search
+    @dogruns = Dogrun.all
+  end
+
   # GET /dogruns/1 or /dogruns/1.json
   def show
   end

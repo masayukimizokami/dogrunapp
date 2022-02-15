@@ -1,0 +1,61 @@
+
+<div class="header_area">     
+    <div class="lefterea">
+        
+        <div class="header-box">
+            <h1>DOGRANsなび</h1>
+        </div>
+        <div>
+        <%= search_form_for @q, url: search_dogruns_path do |f| %>
+              
+              <%= f.search_field :dogrun_name_or_address_cont ,placeholder: "キーワード検索" %>
+              <br>
+              <%= f.submit '検索' %>
+          <% end %>
+        </div>
+
+<!---->
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Dropdown button
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><%= link_to "ドッグランを登録する", "/dogruns/new" ,class: "header-link"%></li>
+                          <li><%= link_to "設定ページ", user_path(current_user) ,class: "header-link"%></li>
+                          <li><%= link_to "登録済みドッグランページ", users_path ,class: "header-link"%></li>
+                          <li><%= link_to "登録済みコメント", "/comments/" ,class: "header-link"%></li>
+                          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "header-link"%></li>
+                      </ul>
+</div>
+
+        <!--ドッグラン登録・ログアウト-->
+                <div class="header-top-ul">
+                      <div class="user_icon"> 
+                        <% if current_user.image.attached? %>
+                          <%= image_tag current_user.image,class: 'header-user-image' %>
+                        <% else %>
+                          <%= image_tag 'no-image.user.png' ,class: 'header-user-image'%>
+                        <% end %>
+                      </div>
+                   
+                  </div>
+
+        <!--検索-->
+                    
+
+        <!--ユーザー名-->
+        <div class="right_area">  
+                <% if user_signed_in? %>
+                 <div class="user_info">
+                          <div class="user_name">
+                              <%= current_user.name %>
+                          </div>
+                         
+                         
+                 </div>
+                <% end %>
+           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+        </div> 
+      
+    </div>
+</div>
