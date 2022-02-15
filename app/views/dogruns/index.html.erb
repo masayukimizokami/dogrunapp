@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Dogruns</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dogrun name</th>
+      <th>Image</th>
+      <th>Address</th>
+      <th>Pr</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dogruns.each do |dogrun| %>
+      <tr>
+        <td><%= dogrun.dogrun_name %></td>
+        <td><%= dogrun.image %></td>
+        <td><%= dogrun.address %></td>
+        <td><%= dogrun.pr %></td>
+        <td><%= dogrun.user_id %></td>
+        <td><%= link_to 'Show', dogrun %></td>
+        <td><%= link_to 'Edit', edit_dogrun_path(dogrun) %></td>
+        <td><%= link_to 'Destroy', dogrun, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Dogrun', new_dogrun_path %>

@@ -1,0 +1,42 @@
+<%= form_with(model: dogrun) do |form| %>
+  <% if dogrun.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dogrun.errors.count, "error") %> prohibited this dogrun from being saved:</h2>
+
+      <ul>
+        <% dogrun.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :dogrun_name %>
+    <%= form.text_field :dogrun_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :image %>
+    <%= form.text_field :image %>
+  </div>
+
+  <div class="field">
+    <%= form.label :address %>
+    <%= form.text_field :address %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pr %>
+    <%= form.text_area :pr %>
+  </div>
+
+  <div class="field">
+    <%= form.label :user_id %>
+    <%= form.number_field :user_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

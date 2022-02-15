@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Dogrun name:</strong>
+  <%= @dogrun.dogrun_name %>
+</p>
+
+<p>
+  <strong>Image:</strong>
+  <%= @dogrun.image %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @dogrun.address %>
+</p>
+
+<p>
+  <strong>Pr:</strong>
+  <%= @dogrun.pr %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @dogrun.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_dogrun_path(@dogrun) %> |
+<%= link_to 'Back', dogruns_path %>

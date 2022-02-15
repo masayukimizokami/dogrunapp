@@ -1,0 +1,2 @@
+class Dogrun < ApplicationRecord
+end
