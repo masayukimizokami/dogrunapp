@@ -1,3 +1,30 @@
-// Place all the styles related to the dogruns controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+/*indexページ*/
+.comment-user-image{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.dogrun-image{
+    width: 100px;
+    height: 100px;
+    border-radius: 10%;
+    object-fit: cover;
+}
+
+/*searchページ*/
+.city img{
+    width: 100px;
+    height: 100px;
+    border-radius: 10%;
+    object-fit: cover;
+}
+
+/*showページ*/
+.dogrun-show-image{
+    width: 300px;
+    height: 300px;
+    border-radius: 10%;
+    object-fit: cover;
+}

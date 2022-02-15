@@ -1,36 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Dogrun name:</strong>
-  <%= @dogrun.dogrun_name %>
-</p>
-
-<p>
-  <strong>Image:</strong>
-  <%= @dogrun.image %>
-</p><p id="notice"><%= notice %></p>
-
  <div class="room-show-image">
-  <%= image_tag @dogrun.image ,class:'show-image'%>
+  <%= image_tag @dogrun.image ,class:'dogrun-show-image'%>
  </div>
 <p>
   <strong>ドッグラン名</strong>
-  <%= @dogrun.dogrun_name %>
+  <h1><%= @dogrun.dogrun_name %></h1>
 </p>
 
 <p>
   <strong>住所</strong>
-  <%= @dogrun.address %>
-</p>
-
-<p>
-  <strong>金額</strong>
-  <%= @dogrun.price %>
+  <h3><%= @dogrun.address %></h3>
 </p>
 
 <p>
   <strong>ドッグラン情報</strong>
-  <%= @dogrun.pr %>
+<h4><%= @dogrun.pr %></h4>
 </p>
 
 <%= link_to 'Edit', edit_dogrun_path(@dogrun) %> 
@@ -72,6 +57,7 @@
     <table>
       <thead>
         <tr>
+          <th></th>
           <th>USER</th>
           <th>タイトル</th>
           <th>コメント</th>
@@ -81,8 +67,13 @@
       <tbody>
         <% @comments.each do |comment| %>
           <tr>
-            <td><%= comment.user_id %></td>
-            <td><%= comment.title %></td>
+            <td><% if comment.user.image.attached? %>
+                  <%= image_tag comment.user.image ,class: 'comment-user-image' %>
+                <% else %>
+                  <%= image_tag 'no-image.user.png' ,class: 'comment-user-image'%>
+                <% end %></td>
+            <td><h5><%= comment.user.name %></h5></td>
+            <td><h5><%= comment.title %></h5></td>
             <td><%= comment.contents %></td>
             <td><%= link_to '詳細', comment %></td>
           
@@ -98,23 +89,4 @@
 
 <hr>
 
-<%= link_to 'Back', dogruns_path %>
-
-
-<p>
-  <strong>Address:</strong>
-  <%= @dogrun.address %>
-</p>
-
-<p>
-  <strong>Pr:</strong>
-  <%= @dogrun.pr %>
-</p>
-
-<p>
-  <strong>User:</strong>
-  <%= @dogrun.user_id %>
-</p>
-
-<%= link_to 'Edit', edit_dogrun_path(@dogrun) %> |
 <%= link_to 'Back', dogruns_path %>
