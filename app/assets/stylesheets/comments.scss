@@ -1,8 +1,13 @@
-
+*{
+    margin: 0;
+    padding: 0;
+}
 main{
     background-color: bisque;
     margin-top: 200px;
 }
+
+/*header*/
 header{
     background-color: aquamarine;
     position: absolute;
@@ -15,8 +20,49 @@ header{
 }
 header h1{
     font-family: round($number: 0);
+    font-size: 30px;
+}
+.container{
+    max-width: 100px;
+    margin:0 auto;
+    display: flex;
+}
+#header-left-erea{
+    display: flex;
+    width: 40%;  
+}
+#header-center-erea{ 
+    display: flex;
+    width: 40%;
+}
+#header-rigth-erea{
+    display: flex;
+    width: 20%;
+}
+#header-rogo-box{
+    margin:30px 30px 10px -80px;
+}
+#header-search-box{
+    margin: 30px 30px 10px 0px;  
+}
+#header-search-submit{
+    margin: 30px 30px 0px -20px; 
 }
 
+#header-user-img-box{
+  margin: 0 30px;
+}
+.header-user-image{
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.header-dropdown{
+    margin: 20px 0 10px 10px;
+}
+
+/*footer*/
 footer {
     background-color: rgb(187, 127, 255);
     position: absolute;
@@ -27,15 +73,10 @@ footer {
     height: 60px;
     text-align: center;
     font-family: "Noto Serif JP";
+    font-size: 30px;
+    color: aliceblue;
   }
-  footer h5{
+footer h5{
     font-family: round($number: 0);
-    color: azure;
-}
-
-.header-user-image{
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    object-fit: cover;
-}
+    color:aqua;
+  }
