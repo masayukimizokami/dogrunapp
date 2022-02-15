@@ -1,15 +1,52 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Dogruns</h1>
+<h1>Dogruns.indexページ</h1>
+
+
+<h1>検索ページ</h1>
+
+<li>新規ログイン後のnameが適用されてない<li>
+  <li>様子を見ながらindex,showのedit,deleteを消す<li>
+  <li>パスワードの変更<li>
+  <li>プロフィールリンクへのヘッダーから直接ジャンプ<li>
+<div class="top_area">
+  <div class="background-photo">
+    <div class="search-box"><!--検索フォーム-->
+      <div class="search-text">
+        <h1>検索フォーム</h1>
+      </div>
+      <%= search_form_for @q, url: search_dogruns_path do |f| %>
+        <%= f.search_field :dogrun_name_or_address_cont ,placeholder: "キーワード検索" %>
+        <br>
+        <%= f.submit '検索' %>
+      <% end %>
+
+    </div>
+  </div>
+</div>
+
+<div class="second_area">
+<h2>おすすめエリア</h2>
+  <div class="city_area">
+
+    <div class="city">
+       <a href="http://localhost:3000/dogruns/search?q%5Bdogrun_name_or_address_cont%5D=%E5%8D%83%E8%91%89%E7%9C%8C&commit=%E6%A4%9C%E7%B4%A2" ><img src='https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg'></a>
+       <p><%= link_to "", "/rooms/search?q%5Broom_address_cont%5D=東京" %></p>
+        <h3>千葉県</h3>
+    </div>
+
+
+  </div>
+</div>
+  
+
+<h1>Dogruns.indexページ</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Dogrun name</th>
-      <th>Image</th>
-      <th>Address</th>
-      <th>Pr</th>
-      <th>User</th>
+      <th>ドッグラン名</th>
+      <th>住所</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -17,19 +54,64 @@
   <tbody>
     <% @dogruns.each do |dogrun| %>
       <tr>
+        <td><%= image_tag dogrun.image ,class: 'dogrun-image' %></td>
         <td><%= dogrun.dogrun_name %></td>
-        <td><%= dogrun.image %></td>
         <td><%= dogrun.address %></td>
-        <td><%= dogrun.pr %></td>
-        <td><%= dogrun.user_id %></td>
-        <td><%= link_to 'Show', dogrun %></td>
-        <td><%= link_to 'Edit', edit_dogrun_path(dogrun) %></td>
-        <td><%= link_to 'Destroy', dogrun, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '詳細', dogrun %></td>
+        
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
+<hr>
+
+<p id="notice"><%= notice %></p>
+
+<h1>投稿一覧</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Contents</th>
+      <th>Dogrun_id</th>
+      <th>user_id</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+               
+  <tbody>
+
+    <% @comments.each do |comment| %>
+    <div>
+      <tr>
+        <td>
+        <% if comment.user.image.attached? %>
+          <%= image_tag comment.user.image ,class: 'comment-user-image' %>
+        <% else %>
+          <%= image_tag 'no-image.user.png' ,class: 'comment-user-image'%>
+        <% end %>
+        </td>
+        <td><%= comment.title %></td>
+        <td><%= comment.contents %></td>
+        <td><%= comment.dogrun_id %></td>
+        <td><%= comment.user_id %></td>
+        <td><%= comment.user.name %></td>
+ 
+        <td><%= link_to 'Show', comment %></td>
+         </tr>
+    <% end %>
+    </div>
+  </tbody>
+</table>
+
+<br>
 
 <%= link_to 'New Dogrun', new_dogrun_path %>
+
+<%= link_to 'New Comment', new_comment_path %>
+
+

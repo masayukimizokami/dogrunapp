@@ -1,17 +1,24 @@
 class DogrunsController < ApplicationController
-  before_action :set_dogrun, only: %i[ show edit update destroy ]
-
-  # GET /dogruns or /dogruns.json
+ 
+  before_action :set_q
+  before_action :authenticate_user!
+  
+  # トップページ
   def index
-    @dogruns = Dogrun.all
+    @dogruns = Dogrun.all.order('created_at desc')
+    @comments = Comment.all.order('created_at desc')
   end
 
+  #検索ページ
   def search
-    @dogruns = Dogrun.all
+    @results = @q.result
   end
 
   # GET /dogruns/1 or /dogruns/1.json
   def show
+    @dogrun = Dogrun.find(params[:id])
+    @comment = Comment.new #新規コメント投稿
+    @comments = @dogrun.comments 
   end
 
   # GET /dogruns/new
@@ -21,11 +28,14 @@ class DogrunsController < ApplicationController
 
   # GET /dogruns/1/edit
   def edit
+    @dogrun = Dogrun.find(params[:id])
   end
 
   # POST /dogruns or /dogruns.json
   def create
     @dogrun = Dogrun.new(dogrun_params)
+    @dogrun.user = current_user 
+
 
     respond_to do |format|
       if @dogrun.save
@@ -40,6 +50,7 @@ class DogrunsController < ApplicationController
 
   # PATCH/PUT /dogruns/1 or /dogruns/1.json
   def update
+    @dogrun = Dogrun.find(params[:id])
     respond_to do |format|
       if @dogrun.update(dogrun_params)
         format.html { redirect_to dogrun_url(@dogrun), notice: "Dogrun was successfully updated." }
@@ -53,6 +64,7 @@ class DogrunsController < ApplicationController
 
   # DELETE /dogruns/1 or /dogruns/1.json
   def destroy
+    @dogrun = Dogrun.find(params[:id])
     @dogrun.destroy
 
     respond_to do |format|
@@ -62,13 +74,14 @@ class DogrunsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_dogrun
-      @dogrun = Dogrun.find(params[:id])
-    end
+
 
     # Only allow a list of trusted parameters through.
     def dogrun_params
-      params.require(:dogrun).permit(:dogrun_name, :image, :address, :pr, :user_id)
+      params.require(:dogrun).permit(:dogrun_name, :image, :address, :price, :pr)
+    end
+
+    def set_q
+      @q = Dogrun.ransack(params[:q])
     end
 end

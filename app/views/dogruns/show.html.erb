@@ -8,7 +8,98 @@
 <p>
   <strong>Image:</strong>
   <%= @dogrun.image %>
+</p><p id="notice"><%= notice %></p>
+
+ <div class="room-show-image">
+  <%= image_tag @dogrun.image ,class:'show-image'%>
+ </div>
+<p>
+  <strong>ドッグラン名</strong>
+  <%= @dogrun.dogrun_name %>
 </p>
+
+<p>
+  <strong>住所</strong>
+  <%= @dogrun.address %>
+</p>
+
+<p>
+  <strong>金額</strong>
+  <%= @dogrun.price %>
+</p>
+
+<p>
+  <strong>ドッグラン情報</strong>
+  <%= @dogrun.pr %>
+</p>
+
+<%= link_to 'Edit', edit_dogrun_path(@dogrun) %> 
+
+<hr>
+
+ <h3>新規投稿</h3>
+
+    <%= form_with model: @comment do |f| %>
+      <table>
+        <tr>
+          <th><%= f.label :title, "タイトル" %></th>
+          <td><%= f.text_field :title, class:"posts-content" %></td>
+        </tr>
+        <tr>
+          <th><%= f.label :contents, "コンテンツ" %></th>
+          <td><%= f.text_field :contents, class:"posts-content" %></td>
+        </tr>
+        
+      </table>
+      <%= f.hidden_field :dogrun_id, value: @dogrun.id %>
+      <div>
+        <ul>
+          <li><%= f.submit "投稿を完了する"%></li>
+        </ul>
+      </div>
+    <% end %>
+
+    <div>
+      <ul>
+        <li><%= link_to "ユーザー情報一覧に戻る", :dogruns %></li>
+      </ul>
+    </div>
+
+<h1>投稿済みコメント</h1>
+
+  <h3>投稿一覧</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>USER</th>
+          <th>タイトル</th>
+          <th>コメント</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @comments.each do |comment| %>
+          <tr>
+            <td><%= comment.user_id %></td>
+            <td><%= comment.title %></td>
+            <td><%= comment.contents %></td>
+            <td><%= link_to '詳細', comment %></td>
+          
+
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+
+
+<%= link_to 'Back', comments_path %>
+
+<hr>
+
+<%= link_to 'Back', dogruns_path %>
+
 
 <p>
   <strong>Address:</strong>

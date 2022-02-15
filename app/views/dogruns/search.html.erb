@@ -1,1 +1,25 @@
 <h1>検索結果</h1>
+
+<div class="content">
+  <div class="card-wrap">
+   
+        <table>
+            <tbody>
+              <% @results.each do |dogrun| %>
+               <%= link_to dogrun_path(dogrun) do %>
+                <div class="card-list">
+                  <p><%= image_tag dogrun.image ,class:'search-image'%></p>
+                  <h1 class="card-listImage"><%= dogrun.dogrun_name %></h1>
+                  <h2 class="card-listImage"><%= dogrun.address %></h2>
+                  <h2 class="card-listImage"><%= dogrun.price %></h2>
+                  <h2 class="card-listImage"><%= dogrun.pr %></h2>
+                </div>
+                <% end %>
+              <% end %>
+            </tbody>
+        </table>
+
+        <%= link_to 'Top', dogruns_path %>
+    
+  </div>
+</div>

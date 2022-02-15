@@ -11,14 +11,14 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :dogrun_name %>
-    <%= form.text_field :dogrun_name %>
+   <div class="field">
+    <%= form.label :image %>
+    <%= form.file_field :image %>
   </div>
 
   <div class="field">
-    <%= form.label :image %>
-    <%= form.text_field :image %>
+    <%= form.label :dogrun_name %>
+    <%= form.text_field :dogrun_name %>
   </div>
 
   <div class="field">
@@ -30,12 +30,7 @@
     <%= form.label :pr %>
     <%= form.text_area :pr %>
   </div>
-
-  <div class="field">
-    <%= form.label :user_id %>
-    <%= form.number_field :user_id %>
-  </div>
-
+ 
   <div class="actions">
     <%= form.submit %>
   </div>
