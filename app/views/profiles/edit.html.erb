@@ -1,2 +1,39 @@
-<h1>Profiles#edit</h1>
-<p>Find me in app/views/profiles/edit.html.erb</p>
+  <div class="profile-content-edit">
+          
+            <div class="profile-edit">
+                <h1>プロフィールページ</h1>
+                  <%= form_for @user do |f| %>
+
+                    <div class="field">
+                        <% if current_user.image.attached?%>
+                           <%= image_tag @user.image,class:'profile-user-image' %>
+                       <% else %>
+                           <% image_tag 'no-image.user.png',class:'profile-user-image' %>
+                       <% end %>   
+                      <br>
+                      <%= f.file_field :image %>
+                    </div>
+
+                  <div class="field">
+                      <%= f.label :名前 ,class:'field-text'%><br />
+                      <%= f.text_field :name, autofocus: true, autocomplete: "名前",class:'field-box' %>
+                    </div>
+
+                    <div class="field">
+                      <%= f.label :自己紹介 ,class:'field-text'%><br />
+                      <%= f.text_area :profile, autofocus: true, autocomplete: "自己紹介を入力" ,class:'field-box'%>
+                    </div>
+
+
+                    <div class="actions">
+                      <%= f.submit "更新" %>
+                    </div>
+
+                  <% end %>
+
+
+            </div>
+        
+    </div>
+</div>
+<h1>ページの終わり</h1>
