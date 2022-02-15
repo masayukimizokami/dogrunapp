@@ -1,5 +1,5 @@
 class DogrunsController < ApplicationController
- 
+  layout 'dogrun'
   before_action :set_q
   before_action :authenticate_user!
   

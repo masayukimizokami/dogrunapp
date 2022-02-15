@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-
+  layout 'comment'
   before_action :set_q
   before_action :authenticate_user!
 
