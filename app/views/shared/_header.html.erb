@@ -4,7 +4,7 @@
   <!--ロゴ・検索スペース-->   
   <div id="header-left-erea">  
     <div id="header-rogo-box">
-      <h1>DOGRANsなび</h1>
+      <%= link_to 'DOGRANs NAVI', dogruns_path ,class:'header-title' %>
     </div>
     <div id="header-search-box" >
       <%= search_form_for @q, url: search_dogruns_path do |f| %>   
