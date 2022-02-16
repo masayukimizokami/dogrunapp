@@ -3,7 +3,9 @@ class DogrunsController < ApplicationController
   before_action :set_q
   before_action :authenticate_user!
   
-  # トップページ
+  def top
+  end
+  # 一覧ページ
   def index
     @dogruns = Dogrun.all.order('created_at desc')
     @comments = Comment.all.order('created_at desc')

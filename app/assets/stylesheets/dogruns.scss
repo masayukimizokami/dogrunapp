@@ -1,3 +1,64 @@
+/*topページ*/
+#top-1 {
+    font-family: "Noto Sans Mono CJK JP"!important;
+    font-weight: bold!important;
+}
+#top-container{
+    max-width: 800px;
+    margin:0 auto;
+    display: flex;
+    margin-top: 50px;
+}
+#top-index{ 
+    width: 300px;
+    height: 300px;
+    float: left;
+    display: block;
+    width: 300px;
+    padding: 0.5em 1em;
+    margin: -2em 50px 0 50px;
+    font-weight: bold;
+    color: #fff;/*文字色*/
+    background: #6091d3;
+    border: solid 3px #6091d3;/*線*/
+    border-radius: 10%;/*角の丸み*/  
+    box-shadow: 2px 2px 2px 2px rgb(3, 99, 155) inset;
+
+}
+#top-index:hover{
+    transform:scale(1.5,1.5);
+  }
+#top-index p{
+   font-size: 70px;
+   margin-top: 120px;
+  }
+#top-new{ 
+    width: 300px;
+    height: 300px;
+    float: right;
+    display: block;
+    width: 300px;
+    padding: 0.5em 1em;
+    margin: -2em 50px 0 50px;
+    font-weight: bold;
+    color: #fff;/*文字色*/
+    background: #ffbd08;
+    border: solid 3px #ffbd08;/*線*/
+    border-radius: 10%;/*角の丸み*/ 
+    box-shadow: 2px 2px 2px 2px rgb(202, 151, 10) inset;
+}
+#top-new:hover{
+    transform:scale(1.5,1.5);
+  }
+#top-new p{
+   font-size: 60px;
+   margin-top: 120px;
+  }
+.top-title{
+    color: #FFF;
+}
+
+
 /*indexページ*/
 .comment-user-image{
     width: 50px;
@@ -28,3 +89,4 @@
     border-radius: 10%;
     object-fit: cover;
 }
+

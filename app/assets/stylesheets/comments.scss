@@ -1,10 +1,13 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: "Noto Sans Mono CJK JP"; 
+    font-weight: bold;
 }
 main{
-    background-color: bisque;
-    margin-top: 200px;
+    text-align: center;
+    background-color: white;
+    margin-top: 80px;
 }
 
 /*header*/
@@ -17,6 +20,11 @@ header{
     width: 100%;
     height: auto;
     text-align: center;
+}
+#header-login{
+    font-family: 'Comic Sans MS';
+    font-size: 30px;
+    color: white !important; 
 }
 .header-title{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -31,7 +39,7 @@ header{
 }
 #header-left-erea{
     display: flex;
-    width: 40%;  
+    width: 45%;  
 }
 #header-center-erea{ 
     display: flex;
@@ -77,8 +85,8 @@ footer {
     font-family: "Noto Serif JP";
     font-size: 30px;
   }
-.footer-title{
+footer p{
     font-family: round($number: 0);
     color:white!important;
-    text-decoration: none;
+    margin-top: 20px;
   }
