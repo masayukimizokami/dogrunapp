@@ -4,6 +4,7 @@ class ProfilesController < ApplicationController
   before_action :authenticate_user!
  
   def index
+    @dogrun = current_user.dogruns
   end
 
   def show
