@@ -130,3 +130,34 @@
     width: 400px;
     height: 300px;
 }
+
+/*_form */
+.dogrun-form-container{
+    max-width: 40%;
+    margin:0 auto;
+    
+}
+.dogrun-form-box{ 
+    text-align: left;
+    width: 500px;
+    padding: 0.5em 1em;
+    margin:0 auto;
+    font-weight: bold;
+    color: #ffbd08;/*文字色*/
+    background: #FFF;
+    border: solid 3px #ffbd08;/*線*/
+    border-radius: 10px;/*角の丸み*/
+}
+
+input[type="text"] {
+    width: 450px;
+    height: 40px;
+}
+input[type="text-area"] {
+    width: 450px;
+    height: 40px;
+}
+.form-label{
+    color: #000;
+    font-size: large;
+}

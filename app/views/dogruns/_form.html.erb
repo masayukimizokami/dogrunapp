@@ -1,37 +1,41 @@
-<%= form_with(model: dogrun) do |form| %>
-  <% if dogrun.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(dogrun.errors.count, "error") %> prohibited this dogrun from being saved:</h2>
+<div class = "dogrun-form-container">
+  <div class = "dogrun-form-box">  
+    <%= form_with(model: dogrun) do |form| %>
+      <% if dogrun.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(dogrun.errors.count, "error") %> prohibited this dogrun from being saved:</h2>
 
-      <ul>
-        <% dogrun.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+          <ul>
+            <% dogrun.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
 
-   <div class="field">
-    <%= form.label :image %>
-    <%= form.file_field :image %>
-  </div>
+      <div class="field">
+        <%= form.label :ドッグランイメージ ,class:'form-label'%><br>
+        <%= form.file_field :image %>
+      </div>
 
-  <div class="field">
-    <%= form.label :dogrun_name %>
-    <%= form.text_field :dogrun_name %>
-  </div>
+      <div class="field">
+        <%= form.label :ドッグラン名 ,class:'form-label' %><br>
+        <%= form.text_field :dogrun_name %>
+      </div>
 
-  <div class="field">
-    <%= form.label :address %>
-    <%= form.text_field :address %>
-  </div>
+      <div class="field">
+        <%= form.label :住所 ,class:'form-label'%><br>
+        <%= form.text_field :address %>
+      </div>
 
-  <div class="field">
-    <%= form.label :pr %>
-    <%= form.text_area :pr %>
+      <div class="field">
+        <%= form.label :ドッグラン情報 ,class:'form-label'%><br>
+        <%= form.text_area :pr ,size: "44x5"%>
+      </div>
+    
+      <div class="actions">
+        <%= form.submit "保存" %>
+      </div>
+    <% end %>
   </div>
- 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+</div>
