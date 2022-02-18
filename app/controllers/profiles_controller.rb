@@ -20,7 +20,7 @@ class ProfilesController < ApplicationController
     @user = User.find(params[:id])
     if @user.update(user_params)
      flash[:notice]="プロフィールを編集しました"
-     redirect_to profiles_path(@user)
+     redirect_to edit_profile_path(@user)
     else
      flash[:notice]="プロフィールを編集できませんでした"
      render"edit"

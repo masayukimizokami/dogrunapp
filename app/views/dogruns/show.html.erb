@@ -19,13 +19,12 @@
 <h4><%= @dogrun.pr %></h4>
 </p>
 
-<%= link_to 'Edit', edit_dogrun_path(@dogrun) %> 
-
 <hr>
 
  <h3>新規投稿</h3>
 
     <%= form_with model: @comment do |f| %>
+    <div class = "comment-form-box">  
       <table>
         <tr>
           <th><%= f.label :title, "タイトル" %></th>
@@ -43,6 +42,7 @@
           <li><%= f.submit "投稿を完了する"%></li>
         </ul>
       </div>
+    </div>
     <% end %>
 
     <div>

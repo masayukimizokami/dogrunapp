@@ -22,24 +22,13 @@
       <%= current_user.name %>
     </div>
     <br>
-    <%= form_with url: profile_path do |f| %>
       <div class="field">
         <% if current_user.image.attached?%>
           <%= image_tag @user.image,class:'profile-user-image' %>
         <% else %>
           <% image_tag 'no-image.user.png',class:'profile-user-image' %>
         <% end %>   
-        <br>
-        <%= f.file_field :image %>
       </div>
-      <div class="field">
-        <%= f.label :自己紹介 ,class:'field-text' %><br />
-        <%= f.text_area :profile, autofocus: true ,placeholder:"自己紹介を入力" ,class:'field-box',size: "44x5" %>
-      </div>
-      <div class="actions">
-        <%= f.submit "更新" %>
-      </div>
-    <% end %>
   </div>
 </div>
 

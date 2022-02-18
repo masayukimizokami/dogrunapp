@@ -1,31 +1,33 @@
-使ってない
-<p id="notice"><%= notice %></p>
+<div class="profile-content-edit">     
+  <div class="profile-edit">
+    <h1 class = "page-title">PROFILE</h1>
 
-<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        
-        <li><%= link_to "設定ページ", edit_user_registration_path(current_user) ,class: "header-link"%></li>
-        <li><%= link_to "登録済みドッグランページ", profiles_path ,class: "header-link"%></li>
-        <li><%= link_to "登録済みコメント", "/comments/" ,class: "header-link"%></li>
-        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "header-link"%></li>
-      </ul>
+    <div class = "profile-link-box">
+      <div class="profile-link">             
+        <%= link_to "設定ページ", edit_user_registration_path(current_user) ,class: "profile-link-text"%>
+      </div>
+      <div class="profile-link">             
+        <%= link_to "登録済みドッグランページ", profiles_path ,class: "profile-link-text"%>
+      </div>
+      <div class="profile-link">             
+        <%= link_to "登録済みコメント", "/comments/" ,class: "profile-link-text"%>
+      </div>
+      <div class="profile-link">             
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "profile-link-text"%>
+      </div>
+    </div>
 
- <div class="room-show-image">
-
- </div>
-<p>
-  <strong>ユーザー名</strong>
-  <%= @user.name %>
-</p>
-
-<p>
-  <strong>profile</strong>
-  <%= @user.profile %>
-</p>
-
-
-<%= link_to 'Edit', profiles_path(@user) %> 
-
-<hr>
-
-
-<%= link_to 'Back', dogruns_path %>
+    <br>
+    <div id="profile-user-name">
+      <%= current_user.name %>
+    </div>
+    <br>
+      <div class="field">
+        <% if current_user.image.attached?%>
+          <%= image_tag @user.image,class:'profile-user-image' %>
+        <% else %>
+          <% image_tag 'no-image.user.png',class:'profile-user-image' %>
+        <% end %>   
+      </div>
+  </div>
+</div>

@@ -1,9 +1,8 @@
-
 <div class="container">  
 
   <!--ロゴ・検索スペース-->   
   <div id="header-left-erea">  
-    <div id="header-rogo-box">
+    <div class="header-rogo-box">
       <%= link_to 'DOGRANs NAVI', dogruns_path ,class:'header-title' %>
     </div>
     <div id="header-search-box" >
@@ -36,13 +35,13 @@
      <%= link_to edit_profile_path(current_user) ,class: "header-link" do %> 
      
      <% end %>
-    <!--dropdown-->
+    <!--button-->
     <div class="header-dropdown">             
         <div><%= link_to "DOGRUN登録", "/dogruns/new" ,class:'header-link-title' %></div>
     </div>
     <br>
     <div class="header-dropdown">             
-        <div><%= link_to "MY PAGE", edit_profile_path(current_user) ,class:'header-link-title' %></div>
+        <div><%= link_to "MY PAGE", profile_path(current_user) ,class:'header-link-title' %></div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
   </div>
