@@ -3,6 +3,12 @@
     font-family: "Noto Sans Mono CJK JP"; 
     font-weight: bold;
 }
+.page-title{
+    width: 100%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif!important;
+    font-size: 50px;
+    
+}
 main{
     text-align: center;
     background-color: white;
@@ -18,14 +24,9 @@ header{
     top: 0;
     left: 0;
     width: 100%;
-    height: auto;
+    height: 120px;
     text-align: center;
-}
-#header-login{
-    font-family: 'Comic Sans MS';
-    font-size: 30px;
-    color: white !important; 
-}
+} 
 .header-title{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 30px;
@@ -40,6 +41,7 @@ header{
 #header-left-erea{
     display: flex;
     width: 45%;  
+    margin: 10px;
 }
 #header-center-erea{ 
     display: flex;
@@ -48,6 +50,7 @@ header{
 #header-rigth-erea{
     display: flex;
     width: 20%;
+    margin-top: 10px;
 }
 #header-rogo-box{
     margin:30px 30px 10px -80px;
@@ -63,10 +66,19 @@ header{
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    object-fit: cover;
 }
-.header-dropdown{
-    margin: 20px 0 10px 10px;
+.header-button{
+    margin: 0;
+    text-decoration: none!important;
+}
+.header-link{
+    text-decoration: none!important;
+}
+.header-link-title{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 15px;
+    text-decoration: none;
+    color: white !important; 
 }
 
 /*footer*/

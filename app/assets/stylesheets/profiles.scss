@@ -1,8 +1,29 @@
-// Place all the styles related to the profiles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
-
 .profile-user-image{
     width: 300px;
     height: 300px;
+}
+/*editページ*/
+.profile-link-box{
+    max-width: 60%;
+    display: flex;
+    margin: 0 auto;
+}
+.profile-link-text{
+    max-width: 40%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 20px;
+    text-decoration: none;
+    color: black
+}
+.profile-link{
+    margin: 0 20px;
+}
+#profile-user-name{
+    font-size: 40px;
+}
+
+.profile-user-image{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
 }

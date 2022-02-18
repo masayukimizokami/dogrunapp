@@ -17,32 +17,32 @@
   </div>
 
   <!--userアイコン-->
-  <div id="header-rigth-erea">  
-    <div id="header-user-img-box">
-      <% if current_user.image.attached? %>
-        <%= image_tag current_user.image,class: 'header-user-image' %>
-      <% else %>
-        <%= image_tag 'no-image.user.png' ,class: 'header-user-image'%>
-      <% end %>
-      <!--ユーザー名-->
-      <% if user_signed_in? %>
-        <div id="header-user-name">
-          <%= current_user.name %>
-        </div>
-      <% end %>
-    </div>
+    <div id="header-rigth-erea"> 
+      <div id="header-user-img-box">
+        <% if current_user.image.attached? %>
+          <div><%= image_tag current_user.image,class: 'header-user-image' %></div>
+        <% else %>
+          <div><%= image_tag 'no-image.user.png' ,class: 'header-user-image'%></div>
+        <% end %>
+        <!--ユーザー名-->
+        <% if user_signed_in? %>
+          <div id="header-user-name">
+            <%= current_user.name %>
+          </div>
+        <% end %>
+      </div> 
+    <div>  
+  
+     <%= link_to edit_profile_path(current_user) ,class: "header-link" do %> 
+     
+     <% end %>
     <!--dropdown-->
     <div class="header-dropdown">             
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-       <p>Dropdown button</p>
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-        <li><%= link_to "ドッグランを登録する", "/dogruns/new" ,class: "header-link"%></li>
-        <li><%= link_to "設定ページ", edit_user_registration_path(current_user) ,class: "header-link"%></li>
-        <li><%= link_to "登録済みドッグランページ", profiles_path ,class: "header-link"%></li>
-        <li><%= link_to "登録済みコメント", "/comments/" ,class: "header-link"%></li>
-        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "header-link"%></li>
-      </ul>
+        <div><%= link_to "DOGRUN登録", "/dogruns/new" ,class:'header-link-title' %></div>
+    </div>
+    <br>
+    <div class="header-dropdown">             
+        <div><%= link_to "MY PAGE", edit_profile_path(current_user) ,class:'header-link-title' %></div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
   </div>

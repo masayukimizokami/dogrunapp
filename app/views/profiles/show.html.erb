@@ -1,4 +1,13 @@
+使ってない
 <p id="notice"><%= notice %></p>
+
+<ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+        
+        <li><%= link_to "設定ページ", edit_user_registration_path(current_user) ,class: "header-link"%></li>
+        <li><%= link_to "登録済みドッグランページ", profiles_path ,class: "header-link"%></li>
+        <li><%= link_to "登録済みコメント", "/comments/" ,class: "header-link"%></li>
+        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "header-link"%></li>
+      </ul>
 
  <div class="room-show-image">
 
