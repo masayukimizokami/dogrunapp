@@ -29,6 +29,11 @@
       </div>
 
       <div class="field">
+        <%= form.label :エリア ,class:'form-label'%><br>
+        <%= form.select :area,[["北海道東北", "北海道東北"], ["関東", "関東"], ["中部", "中部"], ["近畿", "近畿"], ["中四国", "中四国"], ["九州沖縄", "九州沖縄"], ["その他", "その他"]], include_blank: "選択して下さい"  %>
+      </div>
+
+      <div class="field">
         <%= form.label :ドッグラン情報 ,class:'form-label'%><br>
         <%= form.text_area :pr ,size: "44x5"%>
       </div>

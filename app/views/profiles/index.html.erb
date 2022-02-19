@@ -16,13 +16,12 @@
           <tbody>
             <% @dogrun.each do |dogrun| %>
               <tr>
-
-                <td> <%= image_tag dogrun.image %></td>
+                <td> <%= image_tag dogrun.image, class: 'profile-dogrun-image' %></td>
                 <td> <%= dogrun.dogrun_name %></td>
                 <td> <%= dogrun.pr %></td>
                 <td> <%= dogrun.address %></td>
                 <td> <%= dogrun.created_at  %></td>
- 
+                <td><%= link_to '編集', dogrun_path(@dogrun)%></td>
               </tr>
             <% end %>
           </tbody>

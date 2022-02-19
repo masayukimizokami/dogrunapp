@@ -80,7 +80,7 @@ class DogrunsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def dogrun_params
-      params.require(:dogrun).permit(:dogrun_name, :image, :address, :price, :pr)
+      params.require(:dogrun).permit(:dogrun_name, :image, :address, :price, :pr, :area)
     end
 
     def set_q
