@@ -108,7 +108,28 @@
     border-radius: 10%;
     object-fit: cover;
 }
-
+.index-area{
+    margin: 0 300px 0 350px ;
+}
+.dogrun-index-name{
+    width: 150px;
+}
+.dogrun-index-area{
+    width: 90px;
+}
+.dogrun-index-adress{
+    width: 300px;
+}
+.dogrun-index-link{
+    width: 70px;
+}
+.index-comment-area{
+    margin: 0 0px 0 100px ;
+}
+.comment-box{
+    display:flex;
+    flex-flow: column;
+}
 /*searchページ*/
 .city img{
     width: 100px;

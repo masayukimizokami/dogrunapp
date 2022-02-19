@@ -1,7 +1,6 @@
 <p id="notice"><%= notice %></p>
 <h1 class = "page-title">DOGRUNs一覧</h1>
 
-  <li>プロフィールリンクへのヘッダーから直接ジャンプ<li>
 <div class="top_area">
   <div class="background-photo">
     <div class="search-box"><!--検索フォーム-->
@@ -25,102 +24,89 @@
     <div class="city">
       <div class = "tokyo-area">
         <a href="http://localhost:3000/dogruns/search?q%5Bdogrun_name_or_address_or_area_cont%5D=%E5%8C%97%E6%B5%B7%E9%81%93%E6%9D%B1%E5%8C%97&commit=%E6%A4%9C%E7%B4%A2" ><img src='https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg'></a>
-        <h3>北海道・東北</h3>
+        <h5>北海道<br>東北</h5>
       </div>
       <div class = "tokyo-area">
         <a href="http://localhost:3000/dogruns/search?q%5Bdogrun_name_or_address_or_area_cont%5D=%E6%9D%B1%E4%BA%AC&commit=%E6%A4%9C%E7%B4%A2" ><img src='https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg'></a>
-        <h3>関東</h3>
+        <h5>関東</h5>
       </div>
       <div class = "tokyo-area">
         <a href="http://localhost:3000/dogruns/search?q%5Bdogrun_name_or_address_or_area_cont%5D=%E4%B8%AD%E9%83%A8&commit=%E6%A4%9C%E7%B4%A2" ><img src='https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg'></a>
-        <h3>中部</h3>
+        <h5>中部</h5>
       </div>
       <div class = "tokyo-area">
         <a href="http://localhost:3000/dogruns/search?q%5Bdogrun_name_or_address_or_area_cont%5D=%E8%BF%91%E7%95%BF&commit=%E6%A4%9C%E7%B4%A2" ><img src='https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg'></a>
-        <h3>近畿</h3>
+        <h5>近畿</h5>
       </div>
       <div class = "osaka-area">
         <a href="http://localhost:3000/dogruns/search?q%5Bdogrun_name_or_address_or_area_cont%5D=%E4%B8%AD%E5%9B%9B%E5%9B%BD&commit=%E6%A4%9C%E7%B4%A2" ><img src='https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg'></a>
-        <h3>中・四国</h3>
+        <h5>中国<br>四国</h5>
       </div>
       <div class = "tokyo-area">
         <a href="http://localhost:3000/dogruns/search?q%5Bdogrun_name_or_address_or_area_cont%5D=%E4%B9%9D%E5%B7%9E%E6%B2%96%E7%B8%84&commit=%E6%A4%9C%E7%B4%A2" ><img src='https://presite-potepancamp-rails-02.herokuapp.com/assets/img_tokyo.jpg'></a>
-        <h3>九州・沖縄</h3>
+        <h5>九州<br>沖縄</h5>
       </div>
     </div>
-
-
   </div>
 </div>
   
-
-<h1>Dogruns.indexページ</h1>
-<>
-<table>
-  <thead>
-    <tr>
-      <th>ドッグラン名</th>
-      <th>住所</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @dogruns.each do |dogrun| %>
-      <tr>
-        <td><%= image_tag dogrun.image ,class: 'dogrun-image' %></td>
-        <td><%= dogrun.dogrun_name %></td>
-        <td><%= dogrun.address %></td>
-        <td><%= link_to '詳細', dogrun %></td>
-        
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<br>
+<hr>
+<br>
+<h1>新着登録ドッグラン</h1>
+<div class="index-area">
+  <div class="index-area-box">
+    <table>
+      <tbody>
+        <% @dogruns.each do |dogrun| %>
+          <tr>
+            <td><%= image_tag dogrun.image ,class: 'dogrun-image' %></td>
+            <td class='dogrun-index-name'><%= dogrun.dogrun_name %></td>
+            <td class='dogrun-index-area'><%= dogrun.area %></td>
+            <td class='dogrun-index-link'><%= link_to 'クリック', dogrun %></td>
+            <td class='dogrun-index-address'><%= dogrun.address %></td>
+            
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
 <br>
 <hr>
 
 <p id="notice"><%= notice %></p>
 
 <h1>投稿一覧</h1>
+<div class="index-comment-area">
+  <div class="index-comment-box">
+    <table>  
+      <tbody>
 
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th>Title</th>
-      <th>Contents</th>
-      <th>Dogrun_id</th>
-      <th>user_id</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-               
-  <tbody>
-
-    <% @comments.each do |comment| %>
-    <div>
-      <tr>
-        <td>
-        <% if comment.user.image.attached? %>
-          <%= image_tag comment.user.image ,class: 'comment-user-image' %>
-        <% else %>
-          <%= image_tag 'no-image.user.png' ,class: 'comment-user-image'%>
+        <% @comments.each do |comment| %>
+        <div>
+          <tr>
+            <td>
+            <% if comment.user.image.attached? %>
+              <%= image_tag comment.user.image ,class: 'comment-user-image' %>
+            <% else %>
+              <%= image_tag 'no-image.user.png' ,class: 'comment-user-image'%>
+            <% end %>
+            <td><%= comment.user.name %></td>
+            <td><%= comment.dogrun.dogrun_name %></td>
+            <br>
+            <td><%= comment.title %></td>
+            <td><%= comment.contents %></td>
+            <td><%= comment.dogrun.dogrun_name %></td>
+            
+            <td><%= link_to 'Show', comment %></td>
+            </tr>
         <% end %>
-        </td>
-        <td><%= comment.title %></td>
-        <td><%= comment.contents %></td>
-        <td><%= comment.dogrun_id %></td>
-        <td><%= comment.user_id %></td>
-        <td><%= comment.user.name %></td>
- 
-        <td><%= link_to 'Show', comment %></td>
-         </tr>
-    <% end %>
-    </div>
-  </tbody>
-</table>
+        </div>
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <br>
 <%= link_to 'ページTOPへ戻る', dogruns_path %>
