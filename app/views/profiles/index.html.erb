@@ -21,7 +21,7 @@
                 <td> <%= dogrun.pr %></td>
                 <td> <%= dogrun.address %></td>
                 <td> <%= dogrun.created_at  %></td>
-                <td><%= link_to '編集', dogrun_path(@dogrun)%></td>
+                <td> <%= link_to 'Edit', edit_dogrun_path(dogrun) %> </td>
               </tr>
             <% end %>
           </tbody>
