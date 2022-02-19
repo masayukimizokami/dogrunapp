@@ -2,23 +2,26 @@
 
 <div class="content">
   <div class="card-wrap">
-   
         <table>
             <tbody>
               <% @results.each do |dogrun| %>
                <%= link_to dogrun_path(dogrun) do %>
                 <div class="card-list">
-                  <p><%= image_tag dogrun.image ,class:'search-image'%></p>
-                  <h1 class="card-listImage"><%= dogrun.dogrun_name %></h1>
-                  <h2 class="card-listImage"><%= dogrun.address %></h2>
-                  <h2 class="card-listImage"><%= dogrun.pr %></h2>
+                  <div><%= image_tag dogrun.image ,class:'search-image'%></div>
+                  <div>
+                    <br>
+                    <h2><%= dogrun.dogrun_name %></h1>
+                    <br>
+                    <h4><%= dogrun.address %></h2>
+                    <br>
+                    <h4><%= dogrun.pr %></h2>
+                  </div>
                 </div>
                 <% end %>
               <% end %>
             </tbody>
         </table>
-
-        <%= link_to 'Top', dogruns_path %>
-    
   </div>
+  <br>
+  <%= link_to 'Top', dogruns_path %>
 </div>

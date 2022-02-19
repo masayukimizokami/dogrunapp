@@ -126,22 +126,9 @@
 .index-comment-area{
     margin: 0 0px 0 100px ;
 }
-.comment-box{
-    display:flex;
-    flex-flow: column;
-}
-/*searchページ*/
 .city img{
     width: 100px;
     height: 100px;
-    border-radius: 10%;
-    object-fit: cover;
-}
-
-/*showページ*/
-.dogrun-show-image{
-    width: 300px;
-    height: 300px;
     border-radius: 10%;
     object-fit: cover;
 }
@@ -150,6 +137,33 @@
 .search-image{
     width: 400px;
     height: 300px;
+    margin-right: 30px;
+}
+.content{
+    max-width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.card-list{
+    text-align: left;
+    max-width: 900px;
+    margin: 0 auto 50px auto;
+    border: solid 3px #e6d198;
+    background-color: #f3c878;;
+    color:black;
+    display: flex;
+}
+.card-list h4{
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+/*showページ*/
+.dogrun-show-image{
+    width: 300px;
+    height: 300px;
+    border-radius: 10%;
+    object-fit: cover;
 }
 
 /*_form */
