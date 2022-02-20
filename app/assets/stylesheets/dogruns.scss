@@ -130,7 +130,7 @@
     width: 70px;
 }
 .index-comment-area{
-    margin: 0 0px 0 100px ;
+    margin: 0 100px 0 100px ;
 }
 .city img{
     width: 100px;
@@ -143,14 +143,27 @@
     margin: 2em 0;
     border: double 5px #4ec4d3;
 }
+.comment-contents-name{
+    padding: 0.5em 1em;
+    width: 100px;
+    margin: 2em 0;
+    border: double 5px #4ec4d3;
+}
 .comment-contents{
     text-align: left;
     padding: 0.5em 1em;
     margin: 2em 0;
     border: double 5px #4ec4d3;
 }
+.comment-contents-link{
+    padding: 0.5em 1em;
+    width: 150px;
+    margin: 2em 0;
+    border: double 5px #4ec4d3;
+}
 .comment-title{
     text-align: left;
+    width: 200px;
     font-size: large;
     padding: 0.5em 1em;
     margin: 2em 0;
