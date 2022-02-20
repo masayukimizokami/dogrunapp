@@ -1,27 +1,26 @@
 <div class="content">
-  <h1 class = "page-title">インデックス</h1>
+  <h1 class = "page-title">登録済みDOGRUNs</h1>
 
   <div class="rooms-index-list">
     <table>
         <thead>
             <tr>
-                <th>画像</th>
-                <th>名</th>
-                <th>紹介</th>
-                <th>住所</th>
-                <th>登録日</th>
-                
+                <th>image</th>
+                <th>infomation</th>
+                <th>address</th>
+                <th>created day</th>  
             </tr>
         </thead>
-          <tbody>
+          <tbody class="created-dogruns-index">
             <% @dogrun.each do |dogrun| %>
               <tr>
-                <td> <%= image_tag dogrun.image, class: 'profile-dogrun-image' %></td>
-                <td> <%= dogrun.dogrun_name %></td>
+                <td> <%= image_tag dogrun.image, class: 'profile-dogrun-image' %>
+                <br><%= dogrun.dogrun_name %></td>
                 <td> <%= dogrun.pr %></td>
                 <td> <%= dogrun.address %></td>
-                <td> <%= dogrun.created_at  %></td>
-                <td> <%= link_to 'Edit', edit_dogrun_path(dogrun) %> </td>
+                <td> <%= dogrun.created_at.to_s(:datetime_jp)  %></td>
+                <td> <%= link_to '編集', edit_dogrun_path(dogrun) %> </td>
+                <td> <%= link_to '削除', dogrun_path(dogrun),method: :delete, data: { confirm: '本当に削除しますか?' } %> </td>
               </tr>
             <% end %>
           </tbody>
