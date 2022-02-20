@@ -81,14 +81,7 @@
     margin:0 auto;
     display: flex;
 }
-.tokyo-area{
-    width: 200px;
-    padding: 0.5em 1em;
-    margin:0 auto;
-    font-weight: bold;
-    color: black;
-}
-.osaka-area{
+.area-box{
     width: 200px;
     padding: 0.5em 1em;
     margin:0 auto;
@@ -107,19 +100,32 @@
     height: 100px;
     border-radius: 10%;
     object-fit: cover;
+    margin: 20px;
 }
 .index-area{
     margin: 0 300px 0 350px ;
 }
+
+.dogrun-index-box{
+    display: flex;
+}
 .dogrun-index-name{
-    width: 150px;
+    width: 300px;
+    padding: 50px 0;
+    font-size: 22px;
 }
 .dogrun-index-area{
-    width: 90px;
+    width: 120px;
+    padding: 50px 0;
+    font-size: 15px;
 }
-.dogrun-index-adress{
+.dogrun-index-address{
     width: 300px;
+    text-align: left;
+    padding: 50px 0;
+    font-size: 15px;
 }
+
 .dogrun-index-link{
     width: 70px;
 }
@@ -129,6 +135,31 @@
 .city img{
     width: 100px;
     height: 100px;
+    border-radius: 10%;
+    object-fit: cover;
+}
+.index-comment-box tbody{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    border: double 5px #4ec4d3;
+}
+.comment-contents{
+    text-align: left;
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    border: double 5px #4ec4d3;
+}
+.comment-title{
+    text-align: left;
+    font-size: large;
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    border: double 5px #4ec4d3;
+    text-decoration: none;
+}
+.comment-dogrun-image{
+    width: 120px;
+    height: 50px;
     border-radius: 10%;
     object-fit: cover;
 }
@@ -164,6 +195,10 @@
     height: 300px;
     border-radius: 10%;
     object-fit: cover;
+}
+.new-comment-box{
+    margin: 0 auto  ;
+    width: 600px;
 }
 
 /*_form */

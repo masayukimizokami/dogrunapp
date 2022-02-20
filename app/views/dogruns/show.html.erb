@@ -1,70 +1,61 @@
 <p id="notice"><%= notice %></p>
 
 <h1 class = "page-title">DOGRUNs紹介</h1>
- <div class="room-show-image">
+<div class="room-show-image">
   <%= image_tag @dogrun.image ,class:'dogrun-show-image'%>
- </div>
-<p>
-  <strong>ドッグラン名</strong>
-  <h1><%= @dogrun.dogrun_name %></h1>
-</p>
-
-<p>
-  <strong>住所</strong>
-  <h3><%= @dogrun.address %></h3>
-</p>
-
-<p>
-  <strong>ドッグラン情報</strong>
+</div>
+<br>
+<h1><%= @dogrun.dogrun_name %></h1>
+<br>
+<h3><%= @dogrun.address %></h3>
 <h4><%= @dogrun.pr %></h4>
-</p>
-
+<br>
 <hr>
-
- <h3>新規投稿</h3>
-
+<br>
+<h3>コメント新規投稿</h3>
+<br>
+<div class="new-comment-area">
+  <div class="new-comment-box">
     <%= form_with model: @comment do |f| %>
-    <div class = "comment-form-box">  
-      <table>
-        <tr>
-          <th><%= f.label :title, "タイトル" %></th>
-          <td><%= f.text_field :title, class:"posts-content" %></td>
-        </tr>
-        <tr>
-          <th><%= f.label :contents, "コンテンツ" %></th>
-          <td><%= f.text_field :contents, class:"posts-content" %></td>
-        </tr>
-        
-      </table>
-      <%= f.hidden_field :dogrun_id, value: @dogrun.id %>
-      <div>
-        <ul>
-          <li><%= f.submit "投稿を完了する"%></li>
-        </ul>
+      <div class = "comment-form-box">  
+        <table>
+          <tr>
+            <th><%= f.label :title, "タイトル" %></th>
+            <td><%= f.text_field :title, class:"posts-content" %></td>
+          </tr>
+          <tr>
+            <th><%= f.label :contents, "コメント内容" %></th>
+            <td><%= f.text_area :contents, class:"posts-content" ,size: "50x5"%></td>
+          </tr>        
+        </table>
+        <%= f.hidden_field :dogrun_id, value: @dogrun.id %>
+        <div>
+          <%= f.submit "投稿を完了する"%>
+        </div>
       </div>
-    </div>
     <% end %>
-
+    <br>
     <div>
-      <ul>
-        <li><%= link_to "ユーザー情報一覧に戻る", :dogruns %></li>
-      </ul>
+      <%= link_to "一覧に戻る", :dogruns %>
     </div>
-
+  </div>
+</div>
+<br>
+<hr>
+<br>
 <h1>投稿済みコメント</h1>
 
-  <h3>投稿一覧</h3>
-
+<h3>投稿一覧</h3>
+<div class="index-comment-area">
+  <div class="index-comment-box">
     <table>
       <thead>
         <tr>
-          <th></th>
           <th>USER</th>
           <th>タイトル</th>
           <th>コメント</th>
         </tr>
       </thead>
-
       <tbody>
         <% @comments.each do |comment| %>
           <tr>
@@ -77,17 +68,12 @@
             <td><h5><%= comment.title %></h5></td>
             <td><%= comment.contents %></td>
             <td><%= link_to '詳細', comment %></td>
-          
-
           </tr>
         <% end %>
       </tbody>
     </table>
-
-
-
-<%= link_to 'Back', comments_path %>
-
+  </div>
+</div>
 <hr>
 
-<%= link_to 'Back', dogruns_path %>
+<%= link_to '一覧に戻る', dogruns_path %>
