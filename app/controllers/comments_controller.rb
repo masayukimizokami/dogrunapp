@@ -13,7 +13,6 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
   end
 
-
   # GET /comments/1/edit
   def edit
     @comment = Comment.find(params[:id])
@@ -28,7 +27,7 @@ class CommentsController < ApplicationController
         redirect_to :dogruns
       else
         flash[:notice] = "投稿失敗しました"
-        render dogrun_path(params[:comment][:dogrun_id])
+        render "show"
       end
   end
   
