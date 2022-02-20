@@ -15,13 +15,12 @@
  */
  *{
     padding: 0;
-    font-family: "Noto Sans Mono CJK JP"; 
+    font-family:'Noto Sans JP', sans-serif;
     font-weight: bold;
 }
-
 .page-title{
     width: 100%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Noto Sans JP', sans-serif;
     font-size: 50px;
     
 }
@@ -75,7 +74,7 @@ header{
 }
 
 #header-user-img-box{
-  margin: 0 30px;
+  margin: -5px 30px;
 }
 .header-user-image{
     width: 80px;
