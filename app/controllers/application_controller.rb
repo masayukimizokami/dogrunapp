@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
-    before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :configure_permitted_parameters, if: :devise_controller?
    
-    private
+  private
     def configure_permitted_parameters
       #user新規作成時に名前を保存
       devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
