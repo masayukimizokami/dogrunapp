@@ -3,7 +3,7 @@ class CommentsController < ApplicationController
   before_action :set_q
   before_action :authenticate_user!
 
-  # GET /comments or /comments.json
+  # user投稿済みコメント一覧ページ
   def index
     @comment = current_user.comments
   end
@@ -18,25 +18,25 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
   end
 
-  # POST /comments or /comments.json
+  # dogrun/showページよりnew
   def create
     @comment = Comment.new(comment_params)
     @comment = current_user.comments.build(comment_params)
-      if @comment.save
-        flash[:notice] = "投稿完了しました"
-        redirect_to :dogruns
-      else
-        flash[:notice] = "投稿失敗しました"
-        render "show"
-      end
+    if @comment.save
+      flash[:notice] = '投稿完了しました'
+      redirect_to :dogruns
+    else
+      flash[:notice] = '投稿失敗しました'
+      render 'show'
+    end
   end
-  
+
   # PATCH/PUT /comments/1 or /comments/1.json
   def update
     @comment = Comment.find(params[:id])
     respond_to do |format|
       if @comment.update(comment_params)
-        format.html { redirect_to comment_url(@comment), notice: "更新しました。" }
+        format.html { redirect_to comment_url(@comment), notice: '更新しました。' }
         format.json { render :show, status: :ok, location: @comment }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,18 +51,19 @@ class CommentsController < ApplicationController
     @comment.destroy
 
     respond_to do |format|
-      format.html { redirect_to comments_url, notice: "削除しました。" }
+      format.html { redirect_to comments_url, notice: '削除しました。' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Only allow a list of trusted parameters through.
-    def comment_params
-      params.require(:comment).permit(:contents, :dogrun_id, :user_id, :title)
-    end
 
-    def set_q
-      @q = Dogrun.ransack(params[:q])
-    end
+  # Only allow a list of trusted parameters through.
+  def comment_params
+    params.require(:comment).permit(:contents, :dogrun_id, :user_id, :title)
+  end
+
+  def set_q
+    @q = Dogrun.ransack(params[:q])
+  end
 end

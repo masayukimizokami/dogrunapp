@@ -2,17 +2,17 @@ class DogrunsController < ApplicationController
   layout 'dogrun'
   before_action :set_q
   before_action :authenticate_user!
-  
+
   # topページ
-  def top
-  end
+  def top; end
+
   # 一覧ページ
   def index
     @dogruns = Dogrun.all.order('created_at desc')
     @comments = Comment.all.order('created_at desc')
   end
 
-  #検索ページ
+  # 検索ページ
   def search
     @results = @q.result
   end
@@ -20,8 +20,8 @@ class DogrunsController < ApplicationController
   # GET /dogruns/1 or /dogruns/1.json
   def show
     @dogrun = Dogrun.find(params[:id])
-    @comment = Comment.new #新規コメント投稿
-    @comments = @dogrun.comments 
+    @comment = Comment.new # 新規コメント投稿
+    @comments = @dogrun.comments
   end
 
   # GET /dogruns/new
@@ -37,10 +37,10 @@ class DogrunsController < ApplicationController
   # POST /dogruns or /dogruns.json
   def create
     @dogrun = Dogrun.new(dogrun_params)
-    @dogrun.user = current_user 
+    @dogrun.user = current_user
     respond_to do |format|
       if @dogrun.save
-        format.html { redirect_to dogrun_url(@dogrun), notice: "新規投稿できました。" }
+        format.html { redirect_to dogrun_url(@dogrun), notice: '新規投稿できました。' }
         format.json { render :show, status: :created, location: @dogrun }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -54,7 +54,7 @@ class DogrunsController < ApplicationController
     @dogrun = Dogrun.find(params[:id])
     respond_to do |format|
       if @dogrun.update(dogrun_params)
-        format.html { redirect_to dogrun_url(@dogrun), notice: "更新できました。" }
+        format.html { redirect_to dogrun_url(@dogrun), notice: '更新できました。' }
         format.json { render :show, status: :ok, location: @dogrun }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -69,18 +69,19 @@ class DogrunsController < ApplicationController
     @dogrun.destroy
 
     respond_to do |format|
-      format.html { redirect_to dogruns_url, notice: "削除しました。" }
+      format.html { redirect_to dogruns_url, notice: '削除しました。' }
       format.json { head :no_content }
     end
   end
 
   private
-    # Only allow a list of trusted parameters through.
-    def dogrun_params
-      params.require(:dogrun).permit(:dogrun_name, :image, :address, :price, :pr, :area)
-    end
 
-    def set_q
-      @q = Dogrun.ransack(params[:q])
-    end
+  # Only allow a list of trusted parameters through.
+  def dogrun_params
+    params.require(:dogrun).permit(:dogrun_name, :image, :address, :price, :pr, :area)
+  end
+
+  def set_q
+    @q = Dogrun.ransack(params[:q])
+  end
 end

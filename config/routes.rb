@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  resources :profiles, only: [:show, :index]
-  devise_for :users, controllers:{
+  resources :profiles, only: %i[show index]
+  devise_for :users, controllers: {
     registrations: 'users/registrations'
   }
   devise_scope :user do
@@ -13,7 +13,7 @@ Rails.application.routes.draw do
       get 'top'
     end
   end
-  root to: "dogruns#top"
+  root to: 'dogruns#top'
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
