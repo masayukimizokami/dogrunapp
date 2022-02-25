@@ -33,7 +33,7 @@ group :development, :test do
   gem 'sqlite3'
 end
 
-# 本番環境ではPostgresqlを使う
+# 本番環境ではPostgresqlを使う.
 group :production do
   gem 'pg', '1.1'
 end
