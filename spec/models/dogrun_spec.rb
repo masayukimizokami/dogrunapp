@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe Dogrun, type: :model do
+  
   it "dogran_name,address,area,prがあれば登録できる" do 
     expect(FactoryBot.create(:dogrun)).to be_valid
   end 
