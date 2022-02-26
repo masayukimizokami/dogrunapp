@@ -31,6 +31,8 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rubocop-airbnb'
   gem 'sqlite3'
+  gem 'rspec-rails'
+  gem 'factory_bot_rails'
 end
 
 # 本番環境ではPostgresqlを使う.
