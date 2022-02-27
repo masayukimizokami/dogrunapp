@@ -77,14 +77,18 @@ font-family: 'Caveat', cursive;
 }
 .second_area{
     margin-top: 50px;
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
 }
 .city{
-    max-width: 60%;
-    margin:0 auto;
+    margin:0 100px;
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 .area-box{
-    width: 200px;
+    width: 120px;
     padding: 0.5em 1em;
     margin:0 auto;
     font-weight: bold;
@@ -105,7 +109,8 @@ font-family: 'Caveat', cursive;
     margin: 20px;
 }
 .index-area{
-    margin: 0 300px 0 350px ;
+    max-width: 900px;
+    margin: 0 auto ;
 }
 
 .dogrun-index-box{
@@ -127,13 +132,33 @@ font-family: 'Caveat', cursive;
     padding: 50px 0;
     font-size: 15px;
 }
-
+@media screen and (max-width: 767px){
+.dogrun-index-name{
+    width: 300px;
+    padding: 20px 0;
+    font-size: 17px;
+}
+.dogrun-index-area{
+    width: 100px;
+    padding: 20px 5px;
+    font-size: 13px;
+}
+.dogrun-index-address{
+    width: 200px;
+    text-align: left;
+    padding: 20px 0;
+    font-size: 15px;
+}}
 .dogrun-index-link{
     width: 70px;
 }
 .index-comment-area{
-    margin: 0 100px 0 100px ;
+    margin: -100px 100px 0 100px !important;
 }
+@media screen and (max-width: 767px){
+.index-comment-area{
+    margin: -100px 10px 0 10px !important;;
+}}
 .city img{
     width: 100px;
     height: 100px;
@@ -151,12 +176,23 @@ font-family: 'Caveat', cursive;
     margin: 2em 0;
     border: double 5px #4ec4d3;
 }
+.comment-index-image{
+    text-align: left;
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    border: double 5px #4ec4d3;
+    font-size: 10px;
+}
 .comment-contents{
     text-align: left;
     padding: 0.5em 1em;
     margin: 2em 0;
     border: double 5px #4ec4d3;
 }
+@media screen and (max-width: 1000px){
+.comment-contents{
+    display: none;
+}}
 .comment-contents-link{
     padding: 0.5em 1em;
     width: 150px;
@@ -172,6 +208,15 @@ font-family: 'Caveat', cursive;
     border: double 5px #4ec4d3;
     text-decoration: none;
 }
+@media screen and (max-width: 767px){
+.comment-title{
+    font-size: 15px;
+    width: 250px;   
+}
+.comment-contents-link{
+    font-size: 12px;
+    width: 100px;
+}}
 .comment-dogrun-image{
     width: 120px;
     height: 50px;
