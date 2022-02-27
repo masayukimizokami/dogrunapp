@@ -66,7 +66,7 @@ font-family: 'Caveat', cursive;
     font-family: "Noto Sans Mono CJK JP"; 
 }
 .search-box{
-    width: 500px;
+    width:420px;
     padding: 0.5em 1em;
     margin:0 auto;
     font-weight: bold;
@@ -94,6 +94,10 @@ font-family: 'Caveat', cursive;
     font-weight: bold;
     color: black;
 }
+@media screen and (max-width: 767px){
+.area-box{
+    width: 90px;
+}}
 .comment-user-image{
     width: 50px;
     height: 50px;
@@ -153,11 +157,11 @@ font-family: 'Caveat', cursive;
     width: 70px;
 }
 .index-comment-area{
-    margin: -100px 100px 0 100px !important;
+    margin: 10px 100px 0 100px !important;
 }
 @media screen and (max-width: 767px){
 .index-comment-area{
-    margin: -100px 10px 0 10px !important;;
+    margin: 10px 10px 0 10px !important;;
 }}
 .city img{
     width: 100px;
@@ -271,7 +275,7 @@ font-family: 'Caveat', cursive;
 }
 .new-comment-box{
     margin: 0 auto  ;
-    width: 600px;
+    width: 80%;
 }
 .index-comment-table{
     padding: 0.5em 1em ;
@@ -314,7 +318,10 @@ font-family: 'Caveat', cursive;
     font-size: 12px;
     text-align: center;
 }}
-
+@media screen and (max-width: 767px){
+.posts-content{
+    width: 300px !important;
+}}
 
 
 
