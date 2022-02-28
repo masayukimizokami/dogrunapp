@@ -65,4 +65,5 @@ gem 'devise-i18n'
 gem 'rails-i18n'
 gem 'ransack'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
+gem 'aws-sdk-s3'
 
