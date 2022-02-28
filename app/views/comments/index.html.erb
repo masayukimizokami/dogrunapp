@@ -1,8 +1,28 @@
 <p id="notice"><%= notice %></p>
 
 <h1 class = "page-title">My comments index</h1>
+<div class = "profile-link-box">
+  <div class = "profile-link-area">
+    <div class= "profile-link">             
+      <%= link_to "設定ページ", edit_user_registration_path(current_user) ,class: "profile-link-text"%>
+    </div>
+    <div class="profile-link">             
+      <%= link_to profiles_path ,class: "profile-link-text" do %>
+        登録済み<br>ドッグラン
+      <% end %>
+    </div>
+    <div class="profile-link">             
+      <%= link_to  "/comments/" ,class: "profile-link-text" do %>
+       登録済み<br>コメント
+      <% end %>
+    </div>
+    <div class="profile-link">             
+      <%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "profile-link-text"%>
+    </div>
+  </div>
+</div>
 <div class="index-comment-area">
-  <div class="index-comment-box">
+  <div class="index-list-box">
     <table>
       <thead>
         <tr>

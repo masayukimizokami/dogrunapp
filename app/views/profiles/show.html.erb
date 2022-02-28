@@ -3,17 +3,23 @@
     <h1 class = "page-title">PROFILE</h1>
 
     <div class = "profile-link-box">
-      <div class="profile-link">             
-        <%= link_to "設定ページ", edit_user_registration_path(current_user) ,class: "profile-link-text"%>
-      </div>
-      <div class="profile-link">             
-        <%= link_to "登録済みドッグランページ", profiles_path ,class: "profile-link-text"%>
-      </div>
-      <div class="profile-link">             
-        <%= link_to "登録済みコメント", "/comments/" ,class: "profile-link-text"%>
-      </div>
-      <div class="profile-link">             
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "profile-link-text"%>
+      <div class = "profile-link-area">
+        <div class= "profile-link">             
+          <%= link_to "設定ページ", edit_user_registration_path(current_user) ,class: "profile-link-text"%>
+        </div>
+        <div class="profile-link">             
+          <%= link_to profiles_path ,class: "profile-link-text" do %>
+            登録済み<br>ドッグラン
+          <% end %>
+        </div>
+        <div class="profile-link">             
+          <%= link_to  "/comments/" ,class: "profile-link-text" do %>
+          登録済み<br>コメント
+          <% end %>
+        </div>
+        <div class="profile-link">             
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "profile-link-text"%>
+        </div>
       </div>
     </div>
 
