@@ -8,8 +8,8 @@ class DogrunsController < ApplicationController
 
   # 一覧ページ
   def index
-    @dogruns = Dogrun.all.order('created_at desc')
-    @comments = Comment.all.order('created_at desc')
+    @dogruns = Dogrun.last(5)
+    @comments = Comment.last(10)
   end
 
   # 検索ページ
