@@ -38,40 +38,28 @@ class DogrunsController < ApplicationController
   def create
     @dogrun = Dogrun.new(dogrun_params)
     @dogrun.user = current_user
-    respond_to do |format|
       if @dogrun.save
-        format.html { redirect_to dogrun_url(@dogrun), notice: '新規投稿できました。' }
-        format.json { render :show, status: :created, location: @dogrun }
+        redirect_to dogrun_url(@dogrun), notice: '新規投稿できました。' 
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @dogrun.errors, status: :unprocessable_entity }
+        render :new, status: :unprocessable_entity 
       end
-    end
   end
 
   # PATCH/PUT /dogruns/1 or /dogruns/1.json
   def update
     @dogrun = Dogrun.find(params[:id])
-    respond_to do |format|
       if @dogrun.update(dogrun_params)
-        format.html { redirect_to dogrun_url(@dogrun), notice: '更新できました。' }
-        format.json { render :show, status: :ok, location: @dogrun }
+        redirect_to dogrun_url(@dogrun), notice: '更新できました。' 
       else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @dogrun.errors, status: :unprocessable_entity }
+         render :edit, status: :unprocessable_entity 
       end
-    end
   end
 
   # DELETE /dogruns/1 or /dogruns/1.json
   def destroy
     @dogrun = Dogrun.find(params[:id])
     @dogrun.destroy
-
-    respond_to do |format|
-      format.html { redirect_to dogruns_url, notice: '削除しました。' }
-      format.json { head :no_content }
-    end
+      redirect_to dogruns_url, notice: '削除しました。' 
   end
 
   private
