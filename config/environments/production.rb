@@ -120,14 +120,14 @@ Rails.application.configure do
   config.action_mailer.raise_delivery_errors = true
 
   config.action_mailer.delivery_method = :smtp
-  host = 'https://furima-34501.herokuapp.com/'
+  host = 'https://enigmatic-taiga-86646.herokuapp.com/'
   config.action_mailer.default_url_options = { host: host }
   ActionMailer::Base.smtp_settings = {
-    :port           => ENV['MAILGUN_SMTP_PORT'],
-    :address        => ENV['MAILGUN_SMTP_SERVER'],
-    :user_name      => ENV['MAILGUN_SMTP_LOGIN'],
-    :password       => ENV['MAILGUN_SMTP_PASSWORD'],
-    :domain         => host,
+    :address => "smtp.gmail.com",
+    :port => 587,
+    :user_name => ENV["GMAIL_USERNAME"] ,
+    :password => ENV["GMAIL_PASSWORD"] ,
     :authentication => :plain,
+    :domain         => host,
   }
 end
