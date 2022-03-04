@@ -1,17 +1,6 @@
 <div class = "form-container">
   <div class = "form-box">  
     <%= form_with(model: dogrun) do |form| %>
-      <% if dogrun.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(dogrun.errors.count, "error") %> prohibited this dogrun from being saved:</h2>
-
-          <ul>
-            <% dogrun.errors.each do |error| %>
-              <li><%= error.full_message %></li>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
 
       <div class="field">
         <%= form.label :ドッグランイメージ ,class:'form-label'%><br>
