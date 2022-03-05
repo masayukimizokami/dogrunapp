@@ -299,11 +299,12 @@ font-family: 'Caveat', cursive;
 }
 .new-comment-box{
     margin: 0 auto  ;
-    width: 80%;
+    width: 40%;
 }
 .index-comment-table{
     padding: 0.5em 1em ;
-    margin: 2em 0 ;
+    margin: 0 auto ;
+    width: 80%;
 }
 .comment-title-show{
     text-align: left;
@@ -341,10 +342,13 @@ font-family: 'Caveat', cursive;
     font-size: large;
     font-size: 12px;
     text-align: center;
-}}
-@media screen and (max-width: 767px){
+}
 .posts-content{
     width: 300px !important;
+}
+.new-comment-box{
+    margin: 0 auto  ;
+    width: 60%;
 }}
 
 /*_form */
@@ -354,7 +358,7 @@ font-family: 'Caveat', cursive;
 }
 .form-box{ 
     text-align:center;
-    width: 500px;
+    width: 450px;
     padding: 0.5em 1em;
     margin:0 auto;
     font-weight: bold;

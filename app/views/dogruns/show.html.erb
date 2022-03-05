@@ -24,12 +24,10 @@
       <div class = "comment-form-box">  
         <table>
           <tr>
-            <th><%= f.label :title, "タイトル" %></th>
-            <td><%= f.text_field :title, class:"posts-content" %></td>
+            <td><%= f.text_field :title, class:"posts-content" ,placeholder: "タイトル" %></td>
           </tr>
           <tr>
-            <th><%= f.label :contents, "コメント内容" %></th>
-            <td><%= f.text_area :contents, class:"posts-content" ,size: "50x5"%></td>
+            <td><%= f.text_area :contents, class:"posts-content" ,placeholder: "コメント内容" ,size: "50x5"%></td>
           </tr>        
         </table>
         <%= f.hidden_field :dogrun_id, value: @dogrun.id %>

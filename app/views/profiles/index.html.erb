@@ -26,7 +26,7 @@
       <thead>
         <tr>
           <th>image</th>
-          <th>infomation</th>
+          <th class="dogrun-pr">infomation</th>
           <th>address</th>
           <th>created day</th>  
         </tr>
@@ -36,7 +36,7 @@
           <tr>
             <td> <%= image_tag dogrun.image, class: 'profile-dogrun-image' %>
             <br><%= dogrun.dogrun_name %></td>
-            <td> <%= dogrun.pr %></td>
+            <td class="dogrun-pr"> <%= dogrun.pr %></td>
             <td> <%= dogrun.address %></td>
             <td> <%= dogrun.created_at.to_s(:datetime_jp)  %></td>
             <td>
