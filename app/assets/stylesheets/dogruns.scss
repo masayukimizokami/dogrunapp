@@ -358,11 +358,6 @@ body{
     border: solid 3px #ffbd08;/*線*/
     border-radius: 10px;/*角の丸み*/
 }
-
-.dogrun-form-box input[type="text"] {
-    width: 450px;
-    height: 40px;
-}
 .dogrun-form-box {
     width: 250px;
     height: 170px;
@@ -372,7 +367,11 @@ body{
     color: #000;
     font-size: large;
 }
-/*container*/
+@media screen and (max-width: 767px){
+.form-text-box{
+    width:250px ;
+}}
+/*container各ページ全体のdiv*/
 .new-comment-box{
     margin: 0 auto  ;
 }
