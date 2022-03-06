@@ -1,6 +1,3 @@
-//= link_tree ../images
-//= link_directory ../stylesheets .css
-
 let elements = document.querySelectorAll('.rolling-text');
 
 elements.forEach(element => {

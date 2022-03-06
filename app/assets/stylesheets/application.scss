@@ -19,7 +19,7 @@
     font-weight: bold;
 }
 .page-title{
-    width: 100%;
+    width: 80%;
     font-family: 'Noto Sans JP', sans-serif;
     font-size: 50px;  
 }
@@ -186,3 +186,69 @@ footer p{
     color:white!important;
     margin-top: 20px;
   }
+/*各ページJSタイトル*/
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:600);
+.title-text-box{
+    width:750px;
+    padding: 0.5em 1em;
+    margin:0 auto;
+}
+@media screen and (max-width: 767px){
+.title-text-box{
+    width:350px;
+    padding: 0.5em 1em;
+    margin:0 auto;
+}}
+.title-text {
+  width: 60%;  
+  height: 40px;
+}
+.title-text p {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 70px;
+}
+@media screen and (max-width: 767px){
+.title-text p {
+  font-size: 30px;
+}}
+.word {
+  position: absolute;
+  width: 30%;
+  opacity: 0;
+}
+.letter {
+  display: inline-block;
+  position: relative;
+  float: left;
+  transform: translateZ(25px);
+  transform-origin: 50% 50% 25px;
+}
+
+.letter.out {
+  transform: rotateX(90deg);
+  transition: transform 0.32s cubic-bezier(0.55, 0.055, 0.675, 0.19);
+}
+
+.letter.behind {
+  transform: rotateX(-90deg);
+}
+.letter.in {
+  transform: rotateX(0deg);
+  transition: transform 0.38s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.wisteria {
+  color: #8e44ad;
+}
+.belize {
+  color: #2980b9;
+}
+.pomegranate {
+  color: #c0392b;
+}
+.green {
+  color: #16a085;
+}
+.midnight {
+  color: #2c3e50;
+}
