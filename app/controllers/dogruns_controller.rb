@@ -8,8 +8,8 @@ class DogrunsController < ApplicationController
 
   # 一覧ページ
   def index
-    @dogruns = Dogrun.last(5)
-    @comments = Comment.last(10)
+    @dogruns = Dogrun.order(id: "DESC").last(5)
+    @comments = Comment.order(id: "DESC").last(10)
   end
 
   # 検索ページ
@@ -21,7 +21,7 @@ class DogrunsController < ApplicationController
   def show
     @dogrun = Dogrun.find(params[:id])
     @comment = Comment.new # 新規コメント投稿
-    @comments = @dogrun.comments
+    @comments = @dogrun.comments.order(id: "DESC")
   end
 
   # GET /dogruns/new
