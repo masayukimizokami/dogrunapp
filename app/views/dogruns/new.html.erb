@@ -1,5 +1,21 @@
-<h1 class = "page-title">New DOGRUNs</h1>
+<div class="container-area">
+  <div class="container-box">    
+    <div class="title-text-box">
+      <div class="title-text">
+        <p>DOGRUNs</p>
+        <p>
+          <span class="word wisteria">create!</span>
+          <span class="word belize">create!</span>
+          <span class="word pomegranate">create!</span>
+          <span class="word green">create!</span>
+          <span class="word midnight">create!</span>
+        </p>
+      </div>
+    </div>
 
-<%= render 'form', dogrun: @dogrun %>
+    <%= render 'form', dogrun: @dogrun %>
 
-<%= link_to '一覧に戻る', dogruns_path %>
+    <%= link_to '一覧に戻る', dogruns_path %>
+  </div>
+</div>
+<%= javascript_pack_tag 'dogruns/index' %>

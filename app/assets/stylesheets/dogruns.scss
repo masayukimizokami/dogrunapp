@@ -42,25 +42,29 @@ body{
     $font-size: 8px; 
 }}
   
-  .block:last-child{
+.block:last-child{
     color: #d3a13b;
-  }
-  
-  .letter{
+}  
+.letter{
     display: inline-block;
     transition: transform $duration $easing;
-  }
-}
-
+}}
 @for $i from 0 through 20 {
   .letter:nth-child(#{$i + 1}) {
     transition-delay: $delay * $i;
-  }
-}
-
+}}
 .top-welcome{	
-font-family: 'Caveat', cursive;
+    font-family: 'Caveat', cursive;
 }
+.page-title{
+    width: 100%;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 50px;  
+}
+@media screen and (max-width: 767px){
+.page-title{
+    font-size: 35px;  
+}}
 
 /*indexページ*/
        /* .dogrun-title{
@@ -367,4 +371,8 @@ font-family: 'Caveat', cursive;
 .form-label{
     color: #000;
     font-size: large;
+}
+/*container*/
+.new-comment-box{
+    margin: 0 auto  ;
 }

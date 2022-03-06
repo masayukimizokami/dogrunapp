@@ -1,58 +1,75 @@
-<div class="content">
-  <h1 class = "page-title">My register DOGRUNs</h1>
-  <div class = "profile-link-box">
-    <div class = "profile-link-area">
-      <div class= "profile-link">             
-        <%= link_to "設定ページ", edit_user_registration_path(current_user) ,class: "profile-link-text"%>
+<div class="container-area">
+  <div class="container-box">
+    <div class="title-text-box">
+      <div class="title-text">
+        <p>My</p>
+        <p>
+          <span class="word wisteria">DOGRUNs!</span>
+          <span class="word belize">DOGRUNs!</span>
+          <span class="word pomegranate">DOGRUNs!</span>
+          <span class="word green">DOGRUNs!</span>
+          <span class="word midnight">DOGRUNs!</span>
+        </p>
       </div>
-      <div class="profile-link">             
-        <%= link_to profiles_path ,class: "profile-link-text" do %>
-          登録済み<br>ドッグラン
-        <% end %>
+    </div>
+    <div class="content">
+      <div class = "profile-link-box">
+        <div class = "profile-link-area">
+          <div class= "profile-link">             
+            <%= link_to "設定ページ", edit_user_registration_path(current_user) ,class: "profile-link-text"%>
+          </div>
+          <div class="profile-link">             
+            <%= link_to profiles_path ,class: "profile-link-text" do %>
+              登録済み<br>ドッグラン
+            <% end %>
+          </div>
+          <div class="profile-link">             
+            <%= link_to  "/comments/" ,class: "profile-link-text" do %>
+            登録済み<br>コメント
+            <% end %>
+          </div>
+          <div class="profile-link">             
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "profile-link-text"%>
+          </div>
+        </div>
       </div>
-      <div class="profile-link">             
-        <%= link_to  "/comments/" ,class: "profile-link-text" do %>
-        登録済み<br>コメント
-        <% end %>
-      </div>
-      <div class="profile-link">             
-        <%= link_to "ログアウト", destroy_user_session_path, method: :delete,class: "profile-link-text"%>
+
+      <div class="index-list-box">
+        <table>
+          <thead>
+            <tr>
+              <th>image</th>
+              <th class="dogrun-pr">infomation</th>
+              <th>address</th>
+              <th>created day</th>  
+            </tr>
+          </thead>
+          <tbody class="created-dogruns-index">
+            <% @dogrun.each do |dogrun| %>
+              <tr>
+                <td> <%= image_tag dogrun.image, class: 'profile-dogrun-image' %>
+                <br><%= dogrun.dogrun_name %></td>
+                <td class="dogrun-pr"> <%= dogrun.pr %></td>
+                <td> <%= dogrun.address %></td>
+                <td> <%= dogrun.created_at.to_s(:datetime_jp)  %></td>
+                <td>
+                <!--コメント-->
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">                <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                  </svg><br>
+                <%= link_to '編集', edit_dogrun_path(dogrun) %> </td>
+                <td>
+                <!--アイコン-->
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd" d="M6 1.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v1H6v-1Zm5 0v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5ZM4.5 5.029a.5.5 0 1 1 .998-.06l.5 8.5a.5.5 0 0 1-.998.06l-.5-8.5Zm6.53-.528a.5.5 0 0 1 .47.528l-.5 8.5a.5.5 0 1 1-.998-.058l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
+                </svg><br>
+                <%= link_to '削除', dogrun_path(dogrun),method: :delete, data: { confirm: '本当に削除しますか?' } %> </td>       
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
       </div>
     </div>
   </div>
-
-  <div class="index-list-box">
-    <table>
-      <thead>
-        <tr>
-          <th>image</th>
-          <th class="dogrun-pr">infomation</th>
-          <th>address</th>
-          <th>created day</th>  
-        </tr>
-      </thead>
-      <tbody class="created-dogruns-index">
-        <% @dogrun.each do |dogrun| %>
-          <tr>
-            <td> <%= image_tag dogrun.image, class: 'profile-dogrun-image' %>
-            <br><%= dogrun.dogrun_name %></td>
-            <td class="dogrun-pr"> <%= dogrun.pr %></td>
-            <td> <%= dogrun.address %></td>
-            <td> <%= dogrun.created_at.to_s(:datetime_jp)  %></td>
-            <td>
-            <!--コメント-->
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">                <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
-              </svg><br>
-            <%= link_to '編集', edit_dogrun_path(dogrun) %> </td>
-            <td>
-            <!--アイコン-->
-            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="40" fill="currentColor" class="bi bi-trash3-fill" viewBox="0 0 16 16">
-              <path fill-rule="evenodd" d="M6 1.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v1H6v-1Zm5 0v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5ZM4.5 5.029a.5.5 0 1 1 .998-.06l.5 8.5a.5.5 0 0 1-.998.06l-.5-8.5Zm6.53-.528a.5.5 0 0 1 .47.528l-.5 8.5a.5.5 0 1 1-.998-.058l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5Z"/>
-            </svg><br>
-            <%= link_to '削除', dogrun_path(dogrun),method: :delete, data: { confirm: '本当に削除しますか?' } %> </td>       
-          </tr>
-        <% end %>
-      </tbody>
-    </table>
-  </div>
 </div>
+<%= javascript_pack_tag 'dogruns/index' %>
+

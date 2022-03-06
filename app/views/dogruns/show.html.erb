@@ -1,7 +1,17 @@
-<div class="new-comment-area">
-  <div class="new-comment-box">
-
-    <h1 class = "page-title">DOGRUNs pick up</h1>
+<div class="container-area">
+  <div class="container-box">    
+    <div class="title-text-box">
+      <div class="title-text">
+        <p>DOGRUNs</p>
+        <p>
+          <span class="word wisteria">pick up!</span>
+          <span class="word belize">pick up!</span>
+          <span class="word pomegranate">pick up!</span>
+          <span class="word green">pick up!</span>
+          <span class="word midnight">pick up!</span>
+        </p>
+      </div>
+    </div>
     <br>
     <div class="room-show-image">
       <%= image_tag @dogrun.image ,class:'dogrun-show-image'%>
@@ -87,3 +97,6 @@
 <hr>
 
 <%= link_to '一覧に戻る', dogruns_path %>
+  </div>
+</div>
+<%= javascript_pack_tag 'dogruns/index' %>

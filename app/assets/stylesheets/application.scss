@@ -18,15 +18,7 @@
     font-family:'Noto Sans JP', sans-serif;
     font-weight: bold;
 }
-.page-title{
-    width: 80%;
-    font-family: 'Noto Sans JP', sans-serif;
-    font-size: 50px;  
-}
-@media screen and (max-width: 767px){
-.page-title{
-    font-size: 35px;  
-}}
+
 main{
     text-align: center;
     background-color: white;
@@ -214,7 +206,7 @@ footer p{
 }}
 .word {
   position: absolute;
-  width: 30%;
+  width: 40%;
   opacity: 0;
 }
 .letter {

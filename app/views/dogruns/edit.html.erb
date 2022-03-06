@@ -1,6 +1,22 @@
-<h1 class = "page-title">DOGRUNs edit</h1>
+<div class="container-area">
+  <div class="container-box">
+    <div class="title-text-box">
+      <div class="title-text">
+        <p>DOGRUNs</p>
+        <p>
+          <span class="word wisteria">edit!</span>
+          <span class="word belize">edit!</span>
+          <span class="word pomegranate">edit!</span>
+          <span class="word green">edit!</span>
+          <span class="word midnight">edit!</span>
+        </p>
+      </div>
+    </div>
 
-<%= render 'form', dogrun: @dogrun %>
+    <%= render 'form', dogrun: @dogrun %>
 
-<%= link_to 'Show', @dogrun %> |
-<%= link_to 'Back', dogruns_path %>
+    <%= link_to 'Show', @dogrun %> |
+    <%= link_to 'Back', dogruns_path %>
+ </div>
+</div>
+<%= javascript_pack_tag 'dogruns/index' %>

@@ -1,7 +1,17 @@
-<div class="new-comment-area">
-  <div class="new-comment-box">   
-
-    <h1 class = "page-title">Comment pick up</h1>
+<div class="container-area">
+  <div class="container-box">
+    <div class="title-text-box">
+      <div class="title-text">
+        <p>Comment</p>
+        <p>
+          <span class="word wisteria">Pick Up!</span>
+          <span class="word belize">Pick Up!</span>
+          <span class="word pomegranate">Pick Up!</span>
+          <span class="word green">Pick Up!</span>
+          <span class="word midnight">Pick Up!</span>
+        </p>
+      </div>
+    </div>  
     <br>
     <div class="comment-show-user-image">
       <div class="comment-show-user-image-item">
@@ -36,3 +46,4 @@
     <%= link_to 'DOGRUNs pick up に戻る', dogrun_path(@comment.dogrun) %>
   </div>
 </div>
+<%= javascript_pack_tag 'dogruns/index' %>

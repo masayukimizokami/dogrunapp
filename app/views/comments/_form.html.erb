@@ -17,14 +17,14 @@
       <%= image_tag comment.dogrun.image ,class:'comment-show-image'%>
     </div>
     <br>
-    <h1><%= comment.dogrun.dogrun_name %></h1>
+    <h4><%= comment.dogrun.dogrun_name %></h4>
       <div class="field">
         <%= form.label :タイトル,class:'form-label'%><br>
         <%= form.text_field :title %>
       </div>
       <div class="field">
         <%= form.label :コメント本文,class:'form-label'%><br>
-        <%= form.text_area :contents ,size: "44x5"%>
+        <%= form.text_area :contents ,class:'dogrun-form-box'%>
       </div>
 
       <div class="actions">

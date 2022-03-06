@@ -1,28 +1,44 @@
-<h1 class = "page-title">Search result</h1>
-<br>
+<div class="container-area">
+  <div class="container-box">
+    <div class="title-text-box">
+      <div class="title-text">
+        <p>Search</p>
+        <p>
+          <span class="word wisteria">result!</span>
+          <span class="word belize">result!</span>
+          <span class="word pomegranate">result!</span>
+          <span class="word green">result!</span>
+          <span class="word midnight">result!</span>
+        </p>
+      </div>
+    </div>    
+    <br>
 
-<div class="content">
-  <div class="card-wrap">
-        <table>
-            <tbody>
-              <% @results.each do |dogrun| %>
-               <%= link_to dogrun_path(dogrun) do %>
-                <div class="card-list">
-                  <div><%= image_tag dogrun.image ,class:'search-image'%></div>
-                  <div>
-                    <br>
-                    <h2><%= dogrun.dogrun_name %></h2>
-                    <br>
-                    <h4><%= dogrun.address %></h4>
-                    <br>
-                    <h4><%= dogrun.pr %></h4>
-                  </div>
-                </div>
-                <% end %>
-              <% end %>
-            </tbody>
-        </table>
+    <div class="content">
+      <div class="card-wrap">
+            <table>
+                <tbody>
+                  <% @results.each do |dogrun| %>
+                  <%= link_to dogrun_path(dogrun) do %>
+                    <div class="card-list">
+                      <div><%= image_tag dogrun.image ,class:'search-image'%></div>
+                      <div>
+                        <br>
+                        <h2><%= dogrun.dogrun_name %></h2>
+                        <br>
+                        <h4><%= dogrun.address %></h4>
+                        <br>
+                        <h4><%= dogrun.pr %></h4>
+                      </div>
+                    </div>
+                    <% end %>
+                  <% end %>
+                </tbody>
+            </table>
+      </div>
+      <br>
+      <%= link_to 'Top', dogruns_path %>
+    </div>
   </div>
-  <br>
-  <%= link_to 'Top', dogruns_path %>
 </div>
+<%= javascript_pack_tag 'dogruns/index' %>
