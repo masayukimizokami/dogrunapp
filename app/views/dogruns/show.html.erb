@@ -77,8 +77,8 @@
                 <% else %>
                   <%= image_tag 'no-image.user.png' ,class: 'comment-user-image'%>
                 <% end %>
-                 by <%= comment.user.name %></td>
-            <td class="comment-title-show"><h6>Title</h6>
+                 <%= comment.user.name %></td>
+            <td class="comment-title-show">
             <br><%= comment.title %></td>
             <td class="comment-contents-show"><%= comment.contents %></td>
              <td class="comment-contents-link-show">

@@ -72,10 +72,6 @@ body{
 }}
 
 /*indexページ*/
-       /* .dogrun-title{
-            font-size: 30px;
-            font-family: "Noto Sans Mono CJK JP"; 
-        }*/
 .search-box{
     width:420px;
     padding: 0.5em 1em;
@@ -288,9 +284,9 @@ body{
 }
 .new-comment-box{
     margin: 0 auto  ;
+    width: 60%;
 }
 .index-comment-table{
-    padding: 0.5em 1em ;
     margin: 0 auto ;
     width: 80%;
 }
@@ -327,7 +323,7 @@ body{
     font-size: 12px;
 }
 .comment-contents-show{
-    max-width: 150px;
+    max-width: 110px;
     font-size: large;
     font-size: 12px;
     overflow: hidden;
@@ -345,6 +341,11 @@ body{
 }
 .new-comment-box{
     margin: 0 auto  ;
+    width: 70%;
+}
+.index-comment-table{
+    margin: 0 auto ;
+    width: 90%;
 }}
 
 /*_form */
