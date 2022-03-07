@@ -1,22 +1,23 @@
-<h3 class = "top-welcome">Welcome to this page!</h3>
-<h1 class = "page-title">DOGRUNs NAVI</h1>
-   <!--一覧リンク-->
-   <div>
-        <%= link_to dogruns_path  do %>  
-            <div class = "rolling-text">Search</div>
-        <% end %>  
-        <%= link_to dogruns_path  do %>  
-            <div><%= image_tag 'hokkaido_tohoku.jpg' %> </div>
-        <% end %>   
-    <div>
-    <!--登録リンク-->
-    <div>
-        <%= link_to new_dogrun_path do %>
-            <div class = "rolling-text">Create</div>
-        <% end %>
-         <%= link_to new_dogrun_path  do %>  
-            <div><%= image_tag 'hokkaido_tohoku.jpg' %> </div>
-        <% end %> 
+<div id="top-container"> 
+  <div id="top-container-box">
+    <div id="top-wrap">
+        <h3 class = "top-welcome">Welcome to this page!</h3>
+        <h1 class = "page-title">DOGRUNs NAVI</h1>
+        <!--一覧リンク-->
+        <div>
+            <div><%= image_tag 'top.jpeg', class: 'top-image'%> </div>
+            <%= link_to dogruns_path  do %>  
+                <div class = "rolling-text">Search</div>
+            <% end %>   
+        <div>
+        <!--登録リンク-->
+        <div>
+            <%= link_to new_dogrun_path do %>
+                <div class = "rolling-text">Create</div>
+            <% end %>
+        </div>
     </div>
+  </div>
+</div>
 
 <%= javascript_pack_tag 'dogruns/top' %>
