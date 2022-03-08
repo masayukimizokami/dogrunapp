@@ -121,13 +121,14 @@ Rails.application.configure do
 
   config.action_mailer.delivery_method = :smtp
   host = 'https://enigmatic-taiga-86646.herokuapp.com/'
-  config.action_mailer.default_url_options = { host: host }
+  config.action_mailer.default_url_options = { host: host,protocol: 'https' }
   ActionMailer::Base.smtp_settings = {
-    :address => "smtp.gmail.com",
-    :port => 587,
+    :address => 'smtp.gmail.com',
+    :port => '587',
     :user_name => ENV["GMAIL_USERNAME"] ,
     :password => ENV["GMAIL_PASSWORD"] ,
     :authentication => :plain,
-    :domain         => host,
+    :domain         => 'gmail.com',
+    :enable_starttls_auto => true
   }
 end
