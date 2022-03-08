@@ -37,12 +37,19 @@
       <div class="index-list-box">
         <table>
           <thead>
-            <tr>
-              <th>image</th>
-              <th class="dogrun-pr">infomation</th>
-              <th>address</th>
-              <th>created day</th>  
-            </tr>
+            <% if @dogrun.empty? %>
+              <br>
+              <tr>
+                <h5>現在、登録したDOGRUNはありません。</h5>
+              </tr>
+            <% else %>
+              <tr>
+                <th>image</th>
+                <th class="dogrun-pr">infomation</th>
+                <th>address</th>
+                <th>created day</th>  
+              </tr>
+            <% end %>
           </thead>
           <tbody class="created-dogruns-index">
             <% @dogrun.each do |dogrun| %>

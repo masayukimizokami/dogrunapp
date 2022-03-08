@@ -39,13 +39,20 @@
       <div class="index-list-box">
         <table>
           <thead>
-            <tr>
-              <th>タイトル</th>
-              <th>コンテンツ</th>
-              <th>User</th>
-              <th>Title</th>
-              <th colspan="3"></th>
-            </tr>
+            <% if @comment.empty? %>
+              <br>
+              <tr>
+                <h5>現在、コメントはありません。</h5>
+              </tr>
+            <% else %>
+              <tr>
+                <th>タイトル</th>
+                <th>コンテンツ</th>
+                <th>User</th>
+                <th>Title</th>
+                <th colspan="3"></th>
+              </tr>
+            <% end %>
           </thead>
           <tbody>
             <% @comment.each do |comment| %>
