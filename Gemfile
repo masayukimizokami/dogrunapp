@@ -33,6 +33,7 @@ group :development, :test do
   gem 'sqlite3'
   gem 'rspec-rails'
   gem 'factory_bot_rails'
+  gem 'rails-erd'
 end
 
 # 本番環境ではPostgresqlを使う.
