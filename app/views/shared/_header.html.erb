@@ -33,17 +33,22 @@
     <div>  
   
     <!--button-->
-    <div class="header-dropdown">             
-        <ul>
-          <li><%= link_to "/dogruns/new" ,class:'header-link-title' do%>
-            DOGRUNs<br>登録
-          <%end%></li>
-        
-    
-                  
-          <li><%= link_to "MY PAGE", profile_path(current_user) ,class:'header-link-title' %></li>
+    <div class="header-dropdown">    
+      <!-- Example split danger button -->
+      <div class="btn-group">
+        <button type="button" class="btn btn-light">Action</button>
+        <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="visually-hidden">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><%= link_to "DOGRUNs登録","/dogruns/new" ,class:'dropdown-item' %></li>
+          <li><%= link_to "MY PAGE", profile_path(current_user) ,class:'dropdown-item' %></li>
+          <li><%= link_to "設定ページ", edit_user_registration_path(current_user) ,class:'dropdown-item' %></li>
+          <li><%= link_to "MY DOGRUNs", profiles_path ,class:'dropdown-item' %></li>
+          <li><%= link_to "MY COMMENTs",  "/comments/"  ,class:'dropdown-item' %></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete,class:'dropdown-item' %></li> 
         </ul>
-    
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+      </div>  
+    </div>     
   </div>
   
