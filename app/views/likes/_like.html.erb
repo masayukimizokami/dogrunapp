@@ -1,0 +1,18 @@
+
+<% if user_signed_in? %>
+ <% if current_user.liked_by?(dogrun.id) %>
+   <td>
+     <%= link_to destroy_like_path(dogrun), method: :DELETE, remote: true do %> 
+       <i class="fa fa-heart unlike-btn"></i>
+     <% end %> 
+     <%= dogrun.likes.count %>
+   </td>
+ <% else %>
+   <td>
+     <%= link_to create_like_path(dogrun), method: :POST, remote: true do %> 
+       <i class="fa fa-heart like-btn"></i> 
+     <% end %> 
+     <%= dogrun.likes.count %>
+   </td>
+  <% end %>
+<% end %>

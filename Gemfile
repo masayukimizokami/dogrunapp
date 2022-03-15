@@ -69,3 +69,4 @@ gem 'ransack'
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'aws-sdk-s3'
 gem 'dotenv-rails'
+gem 'jquery-rails'
