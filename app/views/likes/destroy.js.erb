@@ -1,2 +1,3 @@
-alert('いいねが出来ている');
-window.addEventListener('DOMContentLoaded', ('#likes_buttons_<%= @dogrun.id %>').html("<%= j(render partial: 'likes/like', locals: {dogrun: @post}) %>");
+alert('いいねを解除している');
+window.addEventListener('DOMContentLoaded', '#likes_buttons_<%= @dogrun.id %>').html("<%= j(render partial: 'likes/like', locals: {dogrun: @dogrun}) %>");
+
