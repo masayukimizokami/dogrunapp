@@ -1,2 +1,1 @@
-alert('いいねが出来ている');
-window.addEventListener('DOMContentLoaded', '#likes_buttons_<%= @dogrun.id %>').html("<%= j(render partial: 'likes/like', locals: {dogrun: @dogrun}) %>");
+document.getElementById('dogrun_<%= @dogrun.id %>').innerHTML = '<%= j(render @dogrun) %>'

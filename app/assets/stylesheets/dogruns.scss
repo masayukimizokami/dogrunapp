@@ -111,6 +111,11 @@ body{
     border-radius: 50%;
     object-fit: cover;
 }
+
+.dogrun-index-list{
+    display: flex;
+}
+
 .dogrun-image{
     width: 100px;
     height: 100px;
@@ -130,8 +135,6 @@ body{
     display: flex;
 }
 .dogrun-index-name{
-    width: 300px;
-    padding: 50px 0;
     font-size: 22px;
 }
 .dogrun-index-area{

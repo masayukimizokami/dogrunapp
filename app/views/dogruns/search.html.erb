@@ -13,31 +13,27 @@
       </div>
     </div>    
     <br>
-
-    <div class="content">
-      <div class="card-wrap">
-            <table>
-                <tbody>
-                  <% @results.each do |dogrun| %>
+    <div class="index-area-box">
+      <div class="index-area-box">
+        <table>
+          <tbody>
+              <div class="dogrun-index-list">
+                <% @results.each do |dogrun| %>
                   <%= link_to dogrun_path(dogrun) do %>
-                    <div class="card-list">
-                      <div><%= image_tag dogrun.image ,class:'search-image'%></div>
-                      <div>
-                        <br>
-                        <h2><%= dogrun.dogrun_name %></h2>
-                        <br>
-                        <h4><%= dogrun.address %></h4>
-                        <br>
-                        <h4><%= dogrun.pr %></h4>
-                      </div>
-                    </div>
-                    <% end %>
+                      <tbody>  
+                          <tr id="dogrun_<%= dogrun.id %>">
+                            <%= render 'dogrun', dogrun: dogrun %>
+                          </tr>
+                      </tbody>
                   <% end %>
-                </tbody>
-            </table>
+                <% end %>
+              <div>
+            
+          </tbody>
+        </table>
       </div>
-      <br>
-      <%= link_to 'Top', dogruns_path %>
-    </div>
+    </div>    
+    <br>
+    <%= link_to 'Top', dogruns_path %>
   </div>
 </div>

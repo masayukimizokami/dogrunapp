@@ -91,18 +91,17 @@
                 <h5>現在、DOGRUNはありません。</h5>
               </tr>
             <% else %>
-              <% @dogruns.each do |dogrun| %>
-                <tr>
+              <div class="dogrun-index-list">
+                <% @dogruns.each do |dogrun| %>
                   <%= link_to dogrun_path(dogrun) do %>
-                    <div class="dogrun-index-box">
-                      <div><%= image_tag dogrun.image ,class: 'dogrun-image' %></div>
-                      <div class='dogrun-index-name'><%= dogrun.dogrun_name %></div>
-                      <div class='dogrun-index-area'><%= dogrun.area %></div>
-                      <div class='dogrun-index-address'><%= dogrun.address %></div>
-                    </div>
+                      <tbody>  
+                          <tr id="dogrun_<%= dogrun.id %>">
+                            <%= render 'dogrun', dogrun: dogrun %>
+                          </tr>
+                      </tbody>
                   <% end %>
-                </tr>
-              <% end %>
+                <% end %>
+              <div>
             <% end %>
           </tbody>
         </table>
@@ -162,3 +161,4 @@
     <%= link_to 'ページTOPへ戻る', dogruns_path %>
   </div>
 </div>
+
