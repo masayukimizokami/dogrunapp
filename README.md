@@ -1,24 +1,29 @@
-# README
+# DOGRUNsNAVI
+https://enigmatic-taiga-86646.herokuapp.com
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# DOGRUNsNAVIについて
+日本全国のドッグランを検索でき、それぞれ投稿されたドッグランについて自由にコメントできるwebアプリです。
 
-Things you may want to cover:
 
+
+# 使用方法
+まずユーザーログイン、または新規登録をして頂きます。
+登録していない方は、閲覧用ゲストログインよりログイン可能です。
+ログインしていただいた後は、ドッグランを調べる(search)か、新しくドッグランを登録する(create)を選んで頂きます。
+調べていただく場合、一覧ページよりキーワード検索して頂き、検索結果ページより閲覧して頂けます。
+また地域ごとのエリア検索ボタンもありますので、そちらからお調べしていただくことも出来ます。
+一覧ページ、検索結果ページでは、非同期で「いいね」登録することも出来ますので、お気に入りのドッグランに「いいね」して見てください。
+ドッグランの詳細ページより、ドッグランに対しコメントを入れる事ができます。
+
+また、ドッグランを登録する場合、active storageを使用しておりますので、簡単に画像を登録する事ができます。
+ご自身のアカウントで登録していただいたドッグラン・コメントは、それぞれMY DOGRUNs,MY COMMENTsから閲覧、編集できます。
+
+パスワードを忘れた場合は、「パスワードを忘れて方はこちら」のボタンより、登録しているメールアドレスをご記入の上、送信ボタンを押して頂きますと、ご自身のメールアドレスにパスワード変更用メールが届きますので、そちらのURLより変更ページに入ってください。
+
+
+#  ER図
+
+# 使用技術
 * Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# 作成者
+溝上正幸(Masayuki Mizokami)
