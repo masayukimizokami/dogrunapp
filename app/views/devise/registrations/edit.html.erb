@@ -1,0 +1,76 @@
+<div class="title-text-box">
+  <div class="title-text">
+    <p>user</p>
+    <p>
+      <span class="word wisteria">edit!</span>
+      <span class="word belize">edit!</span>
+      <span class="word pomegranate">edit!</span>
+      <span class="word green">edit!</span>
+      <span class="word midnight">edit!</span>
+    </p>
+  </div>
+</div>
+<br>
+
+<div class = "login-container">
+  <div class = "login-box">
+    <h3>編集フォーム</h3>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+
+      <div class="field">
+        <% if current_user.image.attached?%>
+          <%= image_tag @user.image,class:'profile-user-image' %>
+        <% else %>
+          <% image_tag 'no-image.user.png',class:'profile-user-image' %>
+        <% end %>   
+        <br>
+        <%= f.file_field :image %>
+      </div>
+      
+      <div class="field">
+        <%= f.label :名前 %><br />
+        <%= f.text_field :name, autofocus: true, autocomplete: "name" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+      </div>
+
+      <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+        <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+      <% end %>
+
+      <div class="field">
+        <%= f.label :パスワード %> <br><i class="user-edit-text">空欄のままなら変更しません</i><br />
+        <%= f.password_field :password, autocomplete: "new-password" %>
+        <% if @minimum_password_length %>
+          <br />
+          <em><i class="user-edit-text">（<%= @minimum_password_length %>文字以上）</i></em>
+        <% end %>
+      </div>
+
+      <div class="field">
+        <%= f.label :パスワード確認用 %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+      <br>
+      <div class="field">
+        <%= f.label :現在のパスワード %> <br><i class="user-edit-text" style="color:red;">変更を反映するには<br>現在のパスワードを入力してください</i><br />
+        <%= f.password_field :current_password, autocomplete: "current-password" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit "更新" %>
+      </div>
+    <% end %>
+
+    <br>
+    <h5>アカウントの削除</h5>
+    <i class="user-delete-text">本当に消しますか?</i><%= button_to "アカウント削除", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+    <%= link_to "DOGRUNs indexに戻る", dogruns_path %>
+  </div>
+</div>
+
+

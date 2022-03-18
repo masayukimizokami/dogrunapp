@@ -1,0 +1,16 @@
+        <td><%= image_tag dogrun.image ,class: 'dogrun-image' %></td>                   
+        <td class='dogrun-index-name'>
+            <%= link_to dogrun_path(dogrun) do%>
+                <%= dogrun.dogrun_name %>
+            <% end %>
+        </td>
+        <td><%= dogrun.area %></td>
+        <td><%= dogrun.address %></td>
+        <% if current_user.liked_by?(dogrun.id) %>
+            <td><%= link_to 'いいね外す', destroy_like_path(dogrun), class: "like-link",method: :DELETE, remote: true %> 
+            <%= dogrun.likes.count %></td>
+        <% else %>
+            <td><%= link_to 'いいねする', create_like_path(dogrun), class: "like-link", method: :POST, remote: true %>
+            <%= dogrun.likes.count %></td>
+        <% end %>
+

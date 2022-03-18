@@ -1,0 +1,46 @@
+/*_form*/
+.comment-form-box input[type="text"] {
+    width: 450px;
+    height: 40px;
+}
+.comment-form-box input[type="text-area"] {
+    width: 450px;
+    height: 40px;
+}
+.comment-show-image{
+    width: 300px;
+    height: 300px;
+    margin: 0 40PX;
+    border-radius: 10%;
+    object-fit: cover;
+}
+/*showページ*/
+.comment-show-user-image{
+    width: 200px;
+    height: 200px;
+    border-radius: 10%;
+    display: flex;
+    margin: 0 auto;
+}
+@media screen and (max-width: 767px){
+.comment-show-user-image{
+    width: 200px;
+    height: 200px;
+    margin: 0 10px 50px 10px;
+}}
+/*.show-comment-box{
+    text-align: left;
+    font-size: large;
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    border: double 5px #4ec4d3;
+    text-decoration: none;
+}*/
+/*editページ*/
+.comment-show-image{
+    width: 200px;
+    height: 200px;
+    border-radius: 10%;
+    display: flex;
+    margin: 0 auto;
+}

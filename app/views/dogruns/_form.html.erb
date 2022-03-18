@@ -1,0 +1,35 @@
+<div class = "form-container">
+  <div class = "form-box">  
+    <%= form_with(model: dogrun) do |form| %>
+
+      <div class="field">
+        <%= form.label :ドッグランイメージ ,class:'form-label'%><br>
+        <%= form.file_field :image %>
+      </div>
+
+      <div class="field">
+        <%= form.label :ドッグラン名 ,class:'form-label' %><br>
+        <%= form.text_field :dogrun_name ,class:'form-text-box'%>
+      </div>
+
+      <div class="field">
+        <%= form.label :住所 ,class:'form-label'%><br>
+        <%= form.text_field :address ,class:'form-text-box'%>
+      </div>
+
+      <div class="field">
+        <%= form.label :エリア ,class:'form-label'%><br>
+        <%= form.select :area,[["北海道東北", "北海道東北"], ["関東", "関東"], ["中部", "中部"], ["近畿", "近畿"], ["中四国", "中四国"], ["九州沖縄", "九州沖縄"], ["その他", "その他"]], include_blank: "選択して下さい"  %>
+      </div>
+
+      <div class="field">
+        <%= form.label :ドッグラン情報 ,class:'form-label'%><br>
+        <%= form.text_area :pr ,class:'dogrun-form-box'%>
+      </div>
+    
+      <div class="actions">
+        <%= form.submit "保存" %>
+      </div>
+    <% end %>
+  </div>
+</div>

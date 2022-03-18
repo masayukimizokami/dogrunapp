@@ -1,0 +1,386 @@
+/*topページ*/
+@import
+url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+$delay: 0.015s;
+$duration: 0.6s;
+$easing: cubic-bezier(0.76, 0, 0.24, 1);
+
+html,
+body{
+  width: 100%;
+}
+
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  z-index: 20;
+}
+
+.rolling-text{
+  display: inline-block;
+  font-family: 'Playfair Display', serif;
+  $font-size: 40px;
+  font-size: $font-size;
+  line-height: $font-size * 1.5;
+  letter-spacing: $font-size / 2;
+  height: $font-size * 1.5;
+  text-decoration: none;
+  overflow: hidden;
+  color: #1a1a1a;
+  
+  &:hover,
+  &.play{
+    .letter{
+      transform: translateY(-100%);
+    }
+  }
+@media screen and (max-width: 767px){
+.rolling-text{
+    $font-size: 8px; 
+}}
+  
+.block:last-child{
+    color: #d3a13b;
+}  
+.letter{
+    display: inline-block;
+    transition: transform $duration $easing;
+}}
+@for $i from 0 through 20 {
+  .letter:nth-child(#{$i + 1}) {
+    transition-delay: $delay * $i;
+}}
+.top-welcome{	
+    font-family: 'Caveat', cursive;
+}
+.page-title{
+    width: 100%;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 50px;  
+}
+.top-image{
+    max-width: 200px;
+    height: auto;
+}
+@media screen and (max-width: 767px){
+.page-title{
+    font-size: 35px;  
+}}
+
+/*indexページ*/
+.search-box{
+    width:420px;
+    padding: 0.5em 1em;
+    margin:0 auto;
+    font-weight: bold;
+    color: black;
+    border: solid 3px #ffbd08;
+    border-radius: 10px;
+    background-color:#ffbd08;
+}
+.second_area{
+    margin-top: 50px;
+    max-width: 980px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.city{
+    margin:0 100px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.area-box{
+    width: 120px;
+    padding: 0.5em 1em;
+    margin:0 auto;
+    font-weight: bold;
+    color: black;
+}
+@media screen and (max-width: 767px){
+.area-box{
+    width: 100px;
+}}
+.comment-user-image{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.dogrun-index-list{
+    display: flex;
+}
+
+.dogrun-image{
+    width: 100px;
+    height: 100px;
+    border-radius: 10%;
+    object-fit: cover;
+    margin: 20px;
+}
+.index-area{
+    max-width: 900px;
+    margin: 0 auto ;
+}
+@media screen and (max-width: 767px){
+.index-area{
+    max-width: 400px;
+}}
+.dogrun-index-box{
+    display: flex;
+}
+.dogrun-index-name{
+    font-size: 22px;
+}
+.dogrun-index-area{
+    width: 120px;
+    padding: 50px 0;
+    font-size: 15px;
+}
+.dogrun-index-address{
+    width: 300px;
+    text-align: left;
+    padding: 50px 0;
+    font-size: 15px;
+}
+@media screen and (max-width: 767px){
+.dogrun-index-name{
+    width: 300px;
+    padding: 20px 0;
+    font-size: 17px;
+}
+.dogrun-index-area{
+    width: 100px;
+    padding: 20px 5px;
+    font-size: 13px;
+}
+.dogrun-index-address{
+    width: 200px;
+    text-align: left;
+    padding: 20px 0;
+    font-size: 15px;
+}}
+.dogrun-index-link{
+    width: 70px;
+}
+.index-comment-area{
+    margin: 10px 100px 0 100px !important;
+}
+@media screen and (max-width: 767px){
+.index-comment-area{
+    margin: 10px 10px 0 10px !important;;
+}}
+.city img{
+    width: 100px;
+    height: 100px;
+    border-radius: 10%;
+    object-fit: cover;
+}
+.index-comment-box tbody{
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    border: double 5px #4ec4d3;
+}
+.comment-contents-name{
+    padding: 0.5em 1em;
+    width: 100px;
+    margin: 2em 0;
+    border: double 5px #4ec4d3;
+}
+.comment-index-image{
+    text-align: left;
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    border: double 5px #4ec4d3;
+    font-size: 10px;
+}
+.comment-contents{
+    text-align: left;
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    border: double 5px #4ec4d3;
+}
+@media screen and (max-width: 1000px){
+.comment-contents{
+    display: none;
+}}
+.comment-contents-link{
+    padding: 0.5em 1em;
+    width: 150px;
+    margin: 2em 0;
+    border: double 5px #4ec4d3;
+}
+.comment-title{
+    text-align: left;
+    width: 200px;
+    font-size: large;
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    border: double 5px #4ec4d3;
+    text-decoration: none;
+}
+@media screen and (max-width: 767px){
+.comment-title{
+    font-size: 15px;
+    width: 250px;   
+}
+.comment-contents-link{
+    font-size: 12px;
+    width: 100px;
+}}
+.comment-dogrun-image{
+    width: 120px;
+    height: 50px;
+    border-radius: 10%;
+    object-fit: cover;
+}
+
+/*searchページ*/
+.search-image{
+    width: 400px;
+    height: 300px;
+    margin-right: 30px;
+}
+.card-wrap{
+    width: 90%;
+    margin: 0 auto;
+}
+@media screen and (max-width: 767px){
+.search-image{
+    width: 200px;
+    height: 150px;
+    margin-right: 17px;
+}}
+.content{
+    max-width: 1000px;
+    margin-right: auto;
+    margin-left: auto;
+}
+.card-list{
+    text-align: left;
+    max-width: 900px;
+    margin: 0 auto 50px auto;
+    border: solid 3px #e6d198;
+    background-color: #f3c878;;
+    color:black;
+    display: flex;
+}
+.card-list h4{
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+/*showページ*/
+.dogrun-show-image{
+    width: 300px;
+    height: 300px;
+    border-radius: 10%;
+    object-fit: cover;
+}
+.index-comment{
+    margin: 0 auto;
+}
+.new-comment-box{
+    margin: 0 auto  ;
+    width: 60%;
+}
+.index-comment-table{
+    margin: 0 auto ;
+    width: 80%;
+}
+.comment-title-show{
+    text-align: left;
+    width: 200px;
+    min-width: 200px;
+    font-size: large;
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    border: double 5px #4ec4d3;
+    text-decoration: none;
+}
+.comment-contents-show{
+    text-align: left;
+    padding: 0.5em 1em;
+    margin: 2em 0;
+    max-width: 350px;
+    border: double 5px #4ec4d3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.comment-contents-link-show{
+    padding: 0.5em 1em;
+    width: 150px;
+    margin: 2em 0;
+    border: double 5px #4ec4d3;
+}
+@media screen and (max-width: 767px){
+.comment-title-show{
+    width: 120px;
+    min-width: 100px;
+    font-size: 12px;
+}
+.comment-contents-show{
+    max-width: 110px;
+    font-size: large;
+    font-size: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.comment-contents-link-show{
+    width: 50px;
+    font-size: large;
+    font-size: 12px;
+    text-align: center;
+}
+.posts-content{
+    width: 300px !important;
+}
+.new-comment-box{
+    margin: 0 auto  ;
+    width: 70%;
+}
+.index-comment-table{
+    margin: 0 auto ;
+    width: 90%;
+}}
+
+/*_form */
+.form-container{
+    max-width: 900px;
+    margin:0 auto; 
+}
+.form-box{ 
+    text-align:center;
+    width: 330px;
+    padding: 0.5em 1em;
+    margin:0 auto;
+    font-weight: bold;
+    color: #ffbd08;/*文字色*/
+    background: #FFF;
+    border: solid 3px #ffbd08;/*線*/
+    border-radius: 10px;/*角の丸み*/
+}
+.dogrun-form-box {
+    width: 250px;
+    height: 170px;
+}
+
+.form-label{
+    color: #000;
+    font-size: large;
+}
+@media screen and (max-width: 767px){
+.form-text-box{
+    width:250px ;
+}}
+/*container各ページ全体のdiv*/
+.new-comment-box{
+    margin: 0 auto  ;
+}

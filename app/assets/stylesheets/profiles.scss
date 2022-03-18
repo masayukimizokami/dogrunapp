@@ -1,0 +1,42 @@
+.profile-user-image{
+    width: 300px;
+    height: 300px;
+}
+/*editページ*/
+
+#profile-user-name{
+    font-size: 40px;
+}
+
+.profile-user-image{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+.profile-dogrun-image{
+    width: 100px;
+    height: 100px;
+    border-radius: 10%;
+    object-fit: cover;
+}
+
+/*indexページ*/
+.index-list-box{
+    margin: 50px;
+}
+.created-dogruns-index{
+    padding: 0.5em 1em;
+    margin:10px;
+    border: double 5px #4ec4d3;
+}
+.created-dogruns-index td{
+    padding: 0.5em 1em;
+    margin:10px;
+    border: double 5px #4ec4d3;
+}
+
+@media screen and (max-width: 767px){
+.dogrun-pr{
+    display: none;
+}}
+

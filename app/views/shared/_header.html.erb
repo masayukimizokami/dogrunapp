@@ -1,0 +1,56 @@
+<div class="container">  
+
+  <!--ロゴ・検索スペース-->   
+  <div id="header-left-erea">  
+    <div class="header-rogo-box">
+      <%= link_to 'DOGRANs NAVI', dogruns_path ,class:'header-title' %>
+    </div>
+    <div id="header-search-box" >
+      <%= search_form_for @q, url: search_dogruns_path do |f| %>   
+        <%= f.search_field :dogrun_name_or_address_or_area_cont ,placeholder: "フリー検索",class:'search_field' %>
+        <%= f.submit '検索',class:'search_submit' %>
+      <% end %>
+    </div>
+  </div>
+  <div id="header-center-erea" >
+  </div>
+
+  <!--userアイコン-->
+    <div id="header-rigth-erea"> 
+      <div id="header-user-img-box">
+        <% if current_user.image.attached? %>
+          <div><%= image_tag current_user.image,class: 'header-user-image' %></div>
+        <% else %>
+          <div><%= image_tag 'no-image.user.png' ,class: 'header-user-image'%></div>
+        <% end %>
+        <!--ユーザー名-->
+        <% if user_signed_in? %>
+          <div id="header-user-name">
+            <%= current_user.name %>
+          </div>
+        <% end %>
+      </div> 
+    <div>  
+  
+    <!--button-->
+    <div class="header-dropdown">    
+      <!-- Example split danger button -->
+      <div class="btn-group">
+        <button type="button" class="btn btn-light">Action</button>
+        <button type="button" class="btn btn-light dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
+          <span class="visually-hidden">Toggle Dropdown</span>
+        </button>
+        <ul class="dropdown-menu">
+          <li><%= link_to "DOGRUNs登録","/dogruns/new" ,class:'dropdown-item' %></li>
+          <li><%= link_to "MY PAGE", profile_path(current_user) ,class:'dropdown-item' %></li>
+          <li><%= link_to "設定ページ", edit_user_registration_path(current_user) ,class:'dropdown-item' %></li>
+          <li><%= link_to "MY DOGRUNs", profiles_path ,class:'dropdown-item' %></li>
+          <li><%= link_to "MY COMMENTs",  "/comments/"  ,class:'dropdown-item' %></li>
+          <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete,class:'dropdown-item' %></li> 
+        </ul>
+      </div>  
+    </div>     
+  </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>

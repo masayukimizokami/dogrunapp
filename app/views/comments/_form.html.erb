@@ -1,0 +1,35 @@
+<div class = "form-container">
+  <div class = "form-box">          
+    <%= form_with(model: comment) do |form| %>
+      <% if comment.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(comment.errors.count, "error") %> prohibited this comment from being saved:</h2>
+
+          <ul>
+            <% comment.errors.each do |error| %>
+              <li><%= error.full_message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      
+    <div class="comment-show-image">
+      <%= image_tag comment.dogrun.image ,class:'comment-show-image'%>
+    </div>
+    <br>
+    <h4><%= comment.dogrun.dogrun_name %></h4>
+      <div class="field">
+        <%= form.label :タイトル,class:'form-label'%><br>
+        <%= form.text_field :title,class:'form-text-box' %>
+      </div>
+      <div class="field">
+        <%= form.label :コメント本文,class:'form-label'%><br>
+        <%= form.text_area :contents ,class:'dogrun-form-box'%>
+      </div>
+
+      <div class="actions">
+        <%= form.submit "保存"%>
+      </div>
+    <% end %>
+  </div>
+</div>

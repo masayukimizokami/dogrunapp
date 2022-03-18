@@ -1,0 +1,27 @@
+inherit_from:
+  - .rubocop_airbnb.yml
+
+# 文字数上限
+LineLength:
+  Max: 350
+
+#以下にはrubocopで検証したくないフォルダを指定する
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'bin/*'
+    - 'config/environments/*'
+    - 'config/application.rb'
+    - 'config/initializers/*'
+    - 'config/spring.rb'
+    - 'config/routes.rb'
+    - 'app/controllers/users/sessions_controller.rb'
+    - 'test/controllers/comments_controller_test.rb'
+    - 'test/controllers/dogruns_controller_test.rb'
+    - 'lib/tasks/*'
+    - 'vendor/**/*'
+    - 'path/ruby'
+
+PercentLiteralDelimiters:
+  PreferredDelimiters:
+    '%i': (and)

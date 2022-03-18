@@ -1,0 +1,12 @@
+ja:
+      activerecord:
+        models:
+          dogrun: ドッグラン
+        attributes:
+          dogrun:
+            dogrun_name: 名前
+            address: 住所
+            image: 写真
+            pr: ドッグラン情報
+            area: 地域
+            

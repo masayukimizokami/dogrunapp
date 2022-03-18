@@ -1,0 +1,20 @@
+<div class="container-area">
+  <div class="container-box">
+    <div class="title-text-box">
+      <div class="title-text">
+        <p>Comment</p>
+        <p>
+          <span class="word wisteria">edit!</span>
+          <span class="word belize">edit!</span>
+          <span class="word pomegranate">edit!</span>
+          <span class="word green">edit!</span>
+          <span class="word midnight">edit!</span>
+        </p>
+      </div>
+    </div>  
+    <%= render 'form', comment: @comment %>
+
+    <%= link_to 'Show', @comment %> |
+    <%= link_to 'Back', comments_path %>
+  </div>
+</div>

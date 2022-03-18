@@ -1,0 +1,39 @@
+<div class="container-area">
+  <div class="container-box">
+    <div class="title-text-box">
+      <div class="title-text">
+        <p>Search</p>
+        <p>
+          <span class="word wisteria">result!</span>
+          <span class="word belize">result!</span>
+          <span class="word pomegranate">result!</span>
+          <span class="word green">result!</span>
+          <span class="word midnight">result!</span>
+        </p>
+      </div>
+    </div>    
+    <br>
+    <div class="index-area-box">
+      <div class="index-area-box">
+        <table>
+          <tbody>
+              <div class="dogrun-index-list">
+                <% @results.each do |dogrun| %>
+                  <%= link_to dogrun_path(dogrun) do %>
+                      <tbody>  
+                          <tr id="dogrun_<%= dogrun.id %>">
+                            <%= render 'dogrun', dogrun: dogrun %>
+                          </tr>
+                      </tbody>
+                  <% end %>
+                <% end %>
+              <div>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>    
+    <br>
+    <%= link_to 'Top', dogruns_path %>
+  </div>
+</div>
