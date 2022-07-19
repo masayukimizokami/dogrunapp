@@ -1,6 +1,13 @@
-        <td><%= image_tag dogrun.image ,class: 'dogrun-image' %></td>                   
+        <!---<td><%= image_tag dogrun.image ,class: 'dogrun-image' %></td>    --> 
+        <% if dogrun.id == 1 %>
+            <td><%= image_tag 'kinki.jpg'  ,class: 'dogrun-image'%> </td>
+        <% elsif  dogrun.id == 2%>
+            <td><%= image_tag 'chubu.jpg'  ,class: 'dogrun-image'%></td>
+        <% end %>              
+        
         <td class='dogrun-index-name'>
             <%= link_to dogrun_path(dogrun) do%>
+                <%= dogrun.id %>
                 <%= dogrun.dogrun_name %>
             <% end %>
         </td>
